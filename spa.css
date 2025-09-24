@@ -1,0 +1,186 @@
+@import url("styles.css");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6fa;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 85px;
+}
+
+.navbar {
+  height: 85px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(56, 114, 240);
+  padding: 0 30px;
+  z-index: 10;
+}
+
+.navbar__logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.navbar__menu {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar__menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.navbar__menu a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  left: 0;
+  bottom: 0;
+  transform: scale(0, 1);
+  transition: transform 0.3s ease;
+}
+
+.navbar__menu a:hover::after {
+  transform: scale(1, 1);
+}
+
+.navbar__menu a:hover {
+  color: red;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Секции */
+.amenities {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.amenities h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: rgb(56, 114, 240);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.img-resp {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+.booking-form {
+  display: grid;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.field span {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+.booking-form button {
+  padding: 12px;
+  background: rgb(56, 114, 240);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background: #315fcc;
+}
+
+/* Футер */
+footer {
+  background: rgb(92, 123, 188);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    background: rgb(56, 114, 240);
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+  }
+
+  .navbar__menu.show {
+    display: flex;
+  }
+
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spa</title>
+
+  <link rel="stylesheet" href="spa.css">
+  <link rel="icon" href="images/Hotel_icon.ico">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="navbar__logo">
+    <img src="images/kokshetau_logo_03.png" alt="Hotel Logo">
+  </div>
+  <nav class="navbar__menu">
+    <a href="#">Main</a>
+    <a href="#about">About Us</a>
+    <a href="#book">Book</a>
+    <a href="#contact">Contacts</a>
+    <a href="profile.html">Profile</a>
+
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Services ▾</a>
+      <div class="dropdown-content">
+        <a href="Spa.html">Spa</a>
+        <a href="Dining.html">Dining</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- Услуги -->
+  <section class="amenities" id="services">
+    <h2>Signature Services</h2>
+    <ul class="grid">
+      <li class="card">
+        <img class="img-resp" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Violet_Hill_Commission_for_Jayfresh_3.jpg/1280px-Violet_Hill_Commission_for_Jayfresh_3.jpg" alt="Massage">
+        <h3>Deep Tissue Massage</h3>
+        <p>60/90 minutes • Relieves muscle tension and improves circulation.</p>
+      </li>
+      <li class="card">
+        <img class="img-resp" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Facial_mask.jpg/1024px-Facial_mask.jpg" alt="Facial">
+        <h3>Revitalizing Facial</h3>
+        <p>Botanical cleanse • Hydration mask • Natural glow finish.</p>
+      </li>
+      <li class="card">
+        <img class="img-resp" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Sauna_2.jpg" alt="Sauna / Steam">
+        <h3>Thermal Suite</h3>
+        <p>Sauna • Steam • Cold plunge • Relaxation lounge access.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="amenities" id="spa-gallery">
+    <h2>Gallery</h2>
+    <div class="grid">
+      <img class="img-resp card" src="https://upload.wikimedia.org/wikipedia/en/d/d0/Stoke_Park_Spa_Treatment_Room.jpg" alt="Treatment room">
+      <img class="img-resp card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg/250px-Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg" alt="Spa pools">
+      <img class="img-resp card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSszOQAw5-RA75C-4-UW7z2XKW0borH9wYSYg&s" alt="Relaxation area">
+    </div>
+  </section>
+
+  <section class="amenities" id="appointment">
+    <h2>Book a Treatment</h2>
+    <form action="#" method="post" class="card booking-form">
+      <label class="field">
+        <span>Service</span>
+        <select name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option>Deep Tissue Massage (60 min)</option>
+          <option>Deep Tissue Massage (90 min)</option>
+          <option>Revitalizing Facial</option>
+          <option>Thermal Suite Pass</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Date</span>
+        <input type="date" name="date" required>
+      </label>
+      <label class="field">
+        <span>Preferred Time</span>
+        <input type="text" name="time" placeholder="15:00" required>
+      </label>
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Group Name: Full Stackers</p>
+    <p>Members: Daniyal A, Alikhan M</p>
+  </footer>
+
+  <script src="dropdown.js"></script>
+</body>
+</html>

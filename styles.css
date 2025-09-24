@@ -246,3 +246,39 @@ footer {
 html{
     scroll-behavior: smooth;
 }
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+
+.dropdown-content .btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+  cursor: pointer;
+}

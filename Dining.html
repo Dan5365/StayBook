@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining</title>
+
+    <link rel="stylesheet" href="dining.css">
+        <link rel="icon" href="images/Hotel_icon.ico" />
+
+</head>
+
+
+
+<body>
+    <header class="navbar">
+        <div class="navbar__logo">
+            <img src="images/kokshetau_logo_03.png" alt="Hotel Logo">
+        </div>
+
+        <details class="menu">
+    <summary aria-label="Open main menu">Menu ▾</summary>
+    <nav class="menu__panel" aria-label="Main site navigation">
+      <a href="index.html">Main</a>
+      <a href="index.html#book">Book</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#contact">Contacts</a>
+      <a href="profile.html">Profile</a>
+      <a href="spa.html">Spa</a>
+      <a href="dining.html">Dining</a>
+    </nav>
+  </details>
+    </header>
+
+    
+<section class="amenities" id="menu">
+  <h2>Menu Highlights</h2>
+  <ul class="grid">
+    <li class="card">
+      <h3>Breakfast</h3>
+      <p>Fresh pastries, omelettes, fruit bowls.</p>
+    </li>
+    <li class="card">
+      <h3>Lunch</h3>
+      <p>Salads, pastas, grilled fish, seasonal soups.</p>
+    </li>
+    <li class="card">
+      <h3>Dinner</h3>
+      <p>Steak, miso cod, mushroom risotto.</p>
+    </li>
+    <li class="card">
+      <h3>Desserts</h3>
+      <p>Cheesecake, tiramisu, sorbet trio.</p>
+    </li>
+  </ul>
+</section>
+
+
+<section class="amenities" id="gallery">
+  <h2>Gallery</h2>
+  <div class="grid">
+    <img class="img-resp card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Heiligengrabe%2C_Kloster_Stift_zum_Heiligengrabe%2C_Abtei%2C_Speiseraum_--_2017_--_7082-8.jpg/1280px-Heiligengrabe%2C_Kloster_Stift_zum_Heiligengrabe%2C_Abtei%2C_Speiseraum_--_2017_--_7082-8.jpg" alt="Dining room">
+    <img class="img-resp card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Traditional_pizza_from_Napoli.jpg/1280px-Traditional_pizza_from_Napoli.jpg" alt="Signature dish">
+    <img class="img-resp card" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/GermanChocolateCake.jpg" alt="Dessert">
+  </div>
+</section>
+
+
+<section class="amenities" id="reserve">
+  <h2>Reserve a Table</h2>
+  <form action="#" method="post" class="card" style="max-width:600px;margin:0 auto;">
+    <label class="field">
+      <span>Date</span>
+      <input type="date" name="date" required>
+    </label>
+    <label class="field">
+      <span>Time</span>
+      <input type="text" name="time" placeholder="19:00" required>
+    </label>
+    <label class="field">
+      <span>Guests</span>
+      <select name="guests" required>
+        <option value="" disabled selected>Select</option>
+        <option>1</option><option>2</option><option>3</option><option>4+</option>
+      </select>
+    </label>
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
+
+
+    <footer>
+        <p>Group Name: Full Stackers</p>
+        <p>Members: Daniyal A, Alikhan M</p>
+    </footer>
+    
+</body>
+
+
+
+</html>
