@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
   <link rel="stylesheet" href="profile.css">
-          <link rel="icon" href="/images/Hotel_icon.ico" />
+          <link rel="icon" href="images/Hotel_icon.ico" />
 
 </head>
 
 <body>
   <header class="navbar">
     <div class="navbar__logo">
-      <img src="/images/kokshetau_logo_03.png" alt="Hotel Logo">
+      <img src="images/kokshetau_logo_03.png" alt="Hotel Logo">
     </div>
     <nav class="navbar__buttons">
       <a href="index.html" class="btn">Main</a>
@@ -26,45 +26,54 @@
 
 
   <section class="profile-page">
-    <h2>Profile</h2>
-    <div class="form-container">
+  <h2>Profile</h2>
+  <div class="form-container">
 
-      <div class="form-box">
-        <h3>Login</h3>
-        <form>
-          <label for="login-email">Email</label>
-          <input type="email" id="login-email" placeholder="Enter your email">
+    <!-- Форма регистрации -->
+    <div class="form-box" id="register-box">
+      <h3>Register</h3>
+      <form>
+        <label for="reg-name">Name</label>
+        <input type="text" id="reg-name" placeholder="Enter your name">
 
-          <label for="login-password">Password</label>
-          <input type="password" id="login-password" placeholder="Enter your password">
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" placeholder="Enter your email">
 
-          <button type="submit" class="cta-btn">Login</button>
-        </form>
-      </div>
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" placeholder="Create a password">
 
-
-      <div class="form-box">
-        <h3>Register</h3>
-        <form>
-          <label for="reg-name">Name</label>
-          <input type="text" id="reg-name" placeholder="Enter your name">
-
-          <label for="reg-email">Email</label>
-          <input type="email" id="reg-email" placeholder="Enter your email">
-
-          <label for="reg-password">Password</label>
-          <input type="password" id="reg-password" placeholder="Create a password">
-
-          <button type="submit" class="cta-btn">Register</button>
-        </form>
-      </div>
+        <button type="submit" class="cta-btn">Register</button>
+      </form>
+      <p class="switch-text">Already have an account?
+        <a href="#" id="show-login">Login here</a>
+      </p>
     </div>
-  </section>
+
+    <!-- Форма входа (по умолчанию скрыта) -->
+    <div class="form-box" id="login-box" style="display:none;">
+      <h3>Login</h3>
+      <form>
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="Enter your email">
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="Enter your password">
+
+        <button type="submit" class="cta-btn">Login</button>
+      </form>
+      <p class="switch-text">Don’t have an account?
+        <a href="#" id="show-register">Register here</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
 
   <footer>
     <p>Group Name: Full Stackers</p>
     <p>Members: Daniyal A, Alikhan M</p>
   </footer>
 </body>
-
+<script src="script.js"></script>
 </html>
