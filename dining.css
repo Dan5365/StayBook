@@ -1,7 +1,7 @@
 @import url("styles.css");
 
 
-/* Секции */
+
 .amenities {
   padding: 60px 20px;
   text-align: center;
@@ -13,7 +13,7 @@
   color: rgb(56, 114, 240);
 }
 
-/* Сетка для карточек */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -22,7 +22,7 @@
   margin: 0 auto;
 }
 
-/* Карточки меню */
+
 .card {
   background: #fff;
   border-radius: 12px;
@@ -49,7 +49,7 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* Картинки */
+
 .img-resp {
   width: 100%;
   height: 200px;
@@ -57,7 +57,7 @@
   border-radius: 12px;
 }
 
-/* Форма бронирования */
+
 form.card {
   background: #fff;
   padding: 30px;
