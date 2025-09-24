@@ -1,0 +1,45 @@
+@import url("styles.css");
+.profile-page {
+  padding: 120px 20px 50px; 
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; 
+  margin-top: 30px;
+}
+
+.form-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 320px;
+  text-align: left;
+}
+
+.form-box h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-box label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+.form-box button {
+  width: 100%;
+}

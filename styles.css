@@ -1,0 +1,186 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f6fa;
+    color: #333;
+    padding-top: 85px; 
+}
+
+
+.navbar {
+    height: 85px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    gap: 40px;
+    background-color: rgb(56, 114, 240);
+    z-index: 10;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.navbar__logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.navbar__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.btn {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.175rem;
+    background-color: red;
+    left: 0;
+    bottom: 0;
+    transform: scale(0, 1);
+    transition: transform 0.3s ease;
+}
+
+.btn:hover::after {
+    transform: scale(1, 1);
+}
+
+.btn:hover {
+    color: red;
+    transition: color 0.2s ease;
+}
+
+.hero {
+    background: url("https://digital.ihg.com/is/image/ihg/intercontinental-tegucigalpa-6071105521-2x1") center/cover no-repeat;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background: red;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: darkred;
+}
+
+
+.about {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.circle-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.room {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.room-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    margin-top: 12px;
+    color: #b8860b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.booking-form {
+    padding: 50px 20px;
+    background: #fff;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.booking-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.booking-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.booking-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+.booking-form button {
+    width: 100%;
+}
+
+
+footer {
+    background: rgb(92, 123, 188);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
