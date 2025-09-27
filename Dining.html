@@ -17,24 +17,28 @@
 
 <body>
     <header class="navbar">
-        <div class="navbar__logo">
-            <img src="images/kokshetau_logo_03.png" alt="Hotel Logo">
-        </div>
+  <div class="navbar__logo">
+       <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a> 
 
-        <details class="menu">
-    <summary aria-label="Open main menu">Menu ▾</summary>
-    <nav class="menu__panel" aria-label="Main site navigation">
-      <a href="index.html">Main</a>
-      <a href="index.html#book">Book</a>
-      <a href="index.html#about">About Us</a>
-      <a href="index.html#contact">Contacts</a>
-      <a href="profile.html">Profile</a>
-      <a href="spa.html">Spa</a>
-      <a href="dining.html">Dining</a>
-    </nav>
-  </details>
-    </header>
+  </div>
 
+  <nav class="navbar__buttons">
+    <a href="#" class="btn">Main</a>
+    <a href="index.html#about" class="btn">About Us</a>
+    <a href="index.html#book" class="btn">Book</a>
+    <a href="index.html#contacts" class="btn">Contacts</a>
+    <a href="profile.html" class="btn">Profile</a>
+
+
+    <div class="dropdown">
+      <a href="#" class="btn dropbtn">Services ▾</a>
+      <div class="dropdown-content">
+        <a href="Spa.html" class="btn">Spa</a>
+        <a href="Dining.html" class="btn">Dining</a>
+      </div>
+    </div>
+  </nav>
+</header>
     
 <section class="amenities" id="menu">
   <h2>Menu Highlights</h2>

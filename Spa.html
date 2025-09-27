@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spa</title>
+  <title>spa</title>
 
   <link rel="stylesheet" href="spa.css">
   <link rel="icon" href="images/Hotel_icon.ico">
 </head>
 <body>
 
-<header class="navbar">
+ <header class="navbar">
   <div class="navbar__logo">
-    <img src="images/kokshetau_logo_03.png" alt="Hotel Logo">
+       <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a> 
   </div>
-  <nav class="navbar__menu">
-    <a href="#">Main</a>
-    <a href="#about">About Us</a>
-    <a href="#book">Book</a>
-    <a href="#contact">Contacts</a>
-    <a href="profile.html">Profile</a>
+
+  <nav class="navbar__buttons">
+    <a href="#" class="btn">Main</a>
+    <a href="index.html#about" class="btn">About Us</a>
+    <a href="index.html#book" class="btn">Book</a>
+    <a href="index.html#contacts" class="btn">Contacts</a>
+    <a href="profile.html" class="btn">Profile</a>
+
 
     <div class="dropdown">
-      <a href="#" class="dropbtn">Services ▾</a>
+      <a href="#" class="btn dropbtn">Services ▾</a>
       <div class="dropdown-content">
-        <a href="Spa.html">Spa</a>
-        <a href="Dining.html">Dining</a>
+        <a href="Spa.html" class="btn">Spa</a>
+        <a href="Dining.html" class="btn">Dining</a>
       </div>
     </div>
   </nav>

@@ -6,23 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
   <link rel="stylesheet" href="profile.css">
-          <link rel="icon" href="images/Hotel_icon.ico" />
+  <link rel="icon" href="images/Hotel_icon.ico" />
 
 </head>
 
 <body>
   <header class="navbar">
-    <div class="navbar__logo">
-      <img src="images/kokshetau_logo_03.png" alt="Hotel Logo">
+  <div class="navbar__logo">
+   <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a> 
+  </div>
+
+  <nav class="navbar__buttons">
+    <a href="#" class="btn">Main</a>
+    <a href="index.html#about" class="btn">About Us</a>
+    <a href="index.html#book" class="btn">Book</a>
+    <a href="index.html#contacts" class="btn">Contacts</a>
+    <a href="profile.html" class="btn">Profile</a>
+
+
+    <div class="dropdown">
+      <a href="#" class="btn dropbtn">Services ▾</a>
+      <div class="dropdown-content">
+        <a href="Spa.html" class="btn">Spa</a>
+        <a href="Dining.html" class="btn">Dining</a>
+      </div>
     </div>
-    <nav class="navbar__buttons">
-      <a href="index.html" class="btn">Main</a>
-      <a href="index.html#book" class="btn">Book</a>
-      <a href="index.html#about" class="btn">About Us</a>
-      <a href="index.html#contact" class="btn">Contacts</a>
-      <a href="profile.html" class="btn">Profile</a>
-    </nav>
-  </header>
+  </nav>
+</header>
 
 
   <section class="profile-page">
