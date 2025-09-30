@@ -23,6 +23,25 @@
 .grid {
   display: grid;
   gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+.item {
+  font-size: larger;
+  font-weight: 500;
+  font-family: "Inter", sans-serif; ;
+  background: #fff;
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.item img {
+  transition: transform 0.3s ease;
+}
+.item:hover img {
+  transform: scale(1.05);
 }
 
 .card {
@@ -39,6 +58,12 @@
   margin-bottom: 10px;
 }
 
+.img-resp-gallery{
+  max-width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  /* margin-bottom: 10px; */
+}
 
 
   .grid {

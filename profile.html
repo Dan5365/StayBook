@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="profile.css">
   <link rel="icon" href="images/Hotel_icon.ico" />
 
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -17,7 +19,7 @@
   </div>
 
   <nav class="navbar__buttons">
-    <a href="#" class="btn">Main</a>
+    <a href="index.html" class="btn">Main</a>
     <a href="index.html#about" class="btn">About Us</a>
     <a href="index.html#book" class="btn">Book</a>
     <a href="index.html#contacts" class="btn">Contacts</a>
@@ -33,6 +35,28 @@
     </div>
   </nav>
 </header>
+
+ <!-- SIDEBAR -->
+  <div class="grid-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html#about" class="sidebar-item">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>About us</span>
+      </a>
+      <a href="index.html#book" class="sidebar-item">
+        <ion-icon name="bed-outline"></ion-icon>
+        <span>Book a room</span>
+      </a>
+      <a href="index.html#contacts" class="sidebar-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>Contacts</span>
+      </a>
+      <a href="mailto:info@hotel.kz" class="sidebar-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>Email</span>
+      </a>
+    </aside>
 
 
   <section class="profile-page">
@@ -59,7 +83,7 @@
       </p>
     </div>
 
-    <!-- Форма входа (по умолчанию скрыта) -->
+    <!-- Форма входа -->
     <div class="form-box" id="login-box" style="display:none;">
       <h3>Login</h3>
       <form>

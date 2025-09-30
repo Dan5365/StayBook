@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,44 +8,73 @@
 
   <link rel="stylesheet" href="spa.css">
   <link rel="icon" href="images/Hotel_icon.ico">
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
+
 <body>
 
- <header class="navbar">
-  <div class="navbar__logo">
-       <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a> 
-  </div>
-
-  <nav class="navbar__buttons">
-    <a href="#" class="btn">Main</a>
-    <a href="index.html#about" class="btn">About Us</a>
-    <a href="index.html#book" class="btn">Book</a>
-    <a href="index.html#contacts" class="btn">Contacts</a>
-    <a href="profile.html" class="btn">Profile</a>
-
-
-    <div class="dropdown">
-      <a href="#" class="btn dropbtn">Services ▾</a>
-      <div class="dropdown-content">
-        <a href="Spa.html" class="btn">Spa</a>
-        <a href="Dining.html" class="btn">Dining</a>
-      </div>
+  <header class="navbar">
+    <div class="navbar__logo">
+      <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a>
     </div>
-  </nav>
-</header>
 
+    <nav class="navbar__buttons">
+      <a href="index.html" class="btn">Main</a>
+      <a href="index.html#about" class="btn">About Us</a>
+      <a href="index.html#book" class="btn">Book</a>
+      <a href="index.html#contacts" class="btn">Contacts</a>
+      <a href="profile.html" class="btn">Profile</a>
+
+
+      <div class="dropdown">
+        <a href="#" class="btn dropbtn">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="Spa.html" class="btn">Spa</a>
+          <a href="Dining.html" class="btn">Dining</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+ <!-- SIDEBAR -->
+  <div class="grid-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html#about" class="sidebar-item">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>About us</span>
+      </a>
+      <a href="index.html#book" class="sidebar-item">
+        <ion-icon name="bed-outline"></ion-icon>
+        <span>Book a room</span>
+      </a>
+      <a href="index.html#contacts" class="sidebar-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>Contacts</span>
+      </a>
+      <a href="mailto:info@hotel.kz" class="sidebar-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>Email</span>
+      </a>
+    </aside>
 
   <!-- Услуги -->
   <section class="amenities" id="services">
     <h2>Signature Services</h2>
     <ul class="grid">
       <li class="card">
-        <img class="img-resp" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Violet_Hill_Commission_for_Jayfresh_3.jpg/1280px-Violet_Hill_Commission_for_Jayfresh_3.jpg" alt="Massage">
+        <img class="img-resp"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Violet_Hill_Commission_for_Jayfresh_3.jpg/1280px-Violet_Hill_Commission_for_Jayfresh_3.jpg"
+          alt="Massage">
         <h3>Deep Tissue Massage</h3>
         <p>60/90 minutes • Relieves muscle tension and improves circulation.</p>
       </li>
       <li class="card">
-        <img class="img-resp" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Facial_mask.jpg/1024px-Facial_mask.jpg" alt="Facial">
+        <img class="img-resp"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Facial_mask.jpg/1024px-Facial_mask.jpg"
+          alt="Facial">
         <h3>Revitalizing Facial</h3>
         <p>Botanical cleanse • Hydration mask • Natural glow finish.</p>
       </li>
@@ -59,9 +89,22 @@
   <section class="amenities" id="spa-gallery">
     <h2>Gallery</h2>
     <div class="grid">
-      <img class="img-resp card" src="https://upload.wikimedia.org/wikipedia/en/d/d0/Stoke_Park_Spa_Treatment_Room.jpg" alt="Treatment room">
-      <img class="img-resp card" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg/250px-Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg" alt="Spa pools">
-      <img class="img-resp card" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSszOQAw5-RA75C-4-UW7z2XKW0borH9wYSYg&s" alt="Relaxation area">
+      <div class="item">
+        <p>Treatment room</p>
+        <img class="img-resp-gallery card"
+          src="https://upload.wikimedia.org/wikipedia/en/d/d0/Stoke_Park_Spa_Treatment_Room.jpg" alt="Treatment room">
+      </div>
+      <div class="item">
+      <p>Spa pools</p>
+      <img class="img-resp-gallery card"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg/250px-Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg"
+        alt="Spa pools">
+    </div>
+    <div class="item">
+    <p>Relaxation area</p>
+    <img class="img-resp-gallery card"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSszOQAw5-RA75C-4-UW7z2XKW0borH9wYSYg&s" alt="Relaxation area">
+    </div>
     </div>
   </section>
 
@@ -97,4 +140,5 @@
 
   <script src="dropdown.js"></script>
 </body>
+
 </html>
