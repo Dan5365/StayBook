@@ -26,6 +26,26 @@
   grid-template-columns: repeat(3, 1fr);
 
 }
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.flex .card {
+  display: flex;
+  flex: 1 1 300px;
+  max-width: 350px;
+   flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
 .item {
   font-size: larger;
   font-weight: 500;
@@ -53,7 +73,7 @@
 
 .img-resp {
   max-width: 100%;
-  height: auto;
+  height: 300px;
   border-radius: 8px;
   margin-bottom: 10px;
 }
