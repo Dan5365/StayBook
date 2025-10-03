@@ -1,4 +1,5 @@
 @import url("styles.css");
+
 .menu-toggle {
   display: none;
   background: none;
@@ -26,6 +27,7 @@
   grid-template-columns: repeat(3, 1fr);
 
 }
+
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -37,29 +39,31 @@
   display: flex;
   flex: 1 1 300px;
   max-width: 350px;
-   flex-direction: column;
+  flex-direction: column;
   justify-content: space-between;
   background: #fff;
   border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
 .item {
   font-size: larger;
   font-weight: 500;
-  font-family: "Inter", sans-serif; ;
+  font-family: "Inter", sans-serif;
+  ;
   background: #fff;
   border-radius: 12px;
   padding: 35px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .item img {
   transition: transform 0.3s ease;
 }
+
 .item:hover img {
   transform: scale(1.05);
 }
@@ -68,7 +72,7 @@
   background: #fff;
   border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .img-resp {
@@ -78,7 +82,7 @@
   margin-bottom: 10px;
 }
 
-.img-resp-gallery{
+.img-resp-gallery {
   max-width: 100%;
   height: 100%;
   border-radius: 8px;
@@ -86,9 +90,9 @@
 }
 
 
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.grid {
+  grid-template-columns: repeat(3, 1fr);
+}
 
 
 
@@ -132,11 +136,12 @@
 }
 
 
- /*SPA GALLERY STYLE*/
+/*SPA GALLERY STYLE*/
 
-  .spa-gallery {
+.spa-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columns */
   gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
@@ -163,7 +168,7 @@
   padding: 10px;
   font-size: 0.9rem;
   color: #fff;
-  background: linear-gradient(transparent, rgba(0,0,0,.6));
+  background: linear-gradient(transparent, rgba(0, 0, 0, .6));
   opacity: 0;
   transition: opacity .3s;
 }
@@ -171,5 +176,3 @@
 .gallery-item:hover figcaption {
   opacity: 1;
 }
-
-

@@ -1,6 +1,7 @@
 @import url("styles.css");
+
 .profile-page {
-  padding: 120px 20px 50px; 
+  padding: 120px 20px 50px;
   text-align: center;
 }
 
@@ -8,7 +9,7 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   margin-top: 30px;
 }
 
@@ -16,7 +17,7 @@
   background: #fff;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 320px;
   text-align: left;
 }
@@ -43,6 +44,7 @@
 .form-box button {
   width: 100%;
 }
+
 .profile-page {
   padding: 50px 20px;
   text-align: center;
@@ -58,7 +60,7 @@
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-box h3 {
