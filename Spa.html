@@ -4,181 +4,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>spa</title>
+  <title>Spa</title>
 
-  <link rel="stylesheet" href="spa.css">
   <link rel="icon" href="images/Hotel_icon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
-<body>
+<body class="bg-light">
 
-  <div class="grid-layout">
-    <header class="navbar">
-      <div class="navbar__logo">
-        <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a>
-      </div>
-
-      <nav class="navbar__buttons">
-        <a href="index.html" class="btn">Main</a>
-        <a href="index.html#about" class="btn">About Us</a>
-        <a href="index.html#book" class="btn">Book</a>
-        <a href="index.html#contacts" class="btn">Contacts</a>
-        <a href="profile.html" class="btn">Profile</a>
-
-
-        <div class="dropdown">
-          <a href="#" class="btn dropbtn">Services ▾</a>
-          <div class="dropdown-content">
-            <a href="Spa.html" class="btn">Spa</a>
-            <a href="Dining.html" class="btn">Dining</a>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <a href="index.html#about" class="sidebar-item">
-        <ion-icon name="information-circle-outline"></ion-icon>
-        <span>About us</span>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/kokshetau_logo_03.png" alt="Hotel Logo" height="40">
       </a>
-      <a href="index.html#book" class="sidebar-item">
-        <ion-icon name="bed-outline"></ion-icon>
-        <span>Book a room</span>
-      </a>
-      <a href="index.html#contacts" class="sidebar-item">
-        <ion-icon name="call-outline"></ion-icon>
-        <span>Contacts</span>
-      </a>
-      <a href="mailto:info@hotel.kz" class="sidebar-item">
-        <ion-icon name="mail-outline"></ion-icon>
-        <span>Email</span>
-      </a>
-    </aside>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Main</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#book">Book</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contacts">Contacts</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
 
-    <main class="main">
-      <!-- Услуги -->
-      <section class="amenities" id="services">
-        <h2>Signature Services</h2>
-        <ul class="flex">
-          <li class="card">
-            <img class="img-resp"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Violet_Hill_Commission_for_Jayfresh_3.jpg/1280px-Violet_Hill_Commission_for_Jayfresh_3.jpg"
-              alt="Massage">
-            <h3>Deep Tissue Massage</h3>
-            <p>60/90 minutes • Relieves muscle tension and improves circulation.</p>
-          </li>
-          <li class="card">
-            <img class="img-resp"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Facial_mask.jpg/1024px-Facial_mask.jpg"
-              alt="Facial">
-            <h3>Revitalizing Facial</h3>
-            <p>Botanical cleanse • Hydration mask • Natural glow finish.</p>
-          </li>
-          <li class="card">
-            <img class="img-resp" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Sauna_2.jpg"
-              alt="Sauna / Steam">
-            <h3>Thermal Suite</h3>
-            <p>Sauna • Steam • Cold plunge • Relaxation lounge access.</p>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Spa.html">Spa</a></li>
+              <li><a class="dropdown-item" href="Dining.html">Dining</a></li>
+            </ul>
           </li>
         </ul>
-      </section>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Main Content -->
+  <main class="container my-5">
 
-
-      <!-- GALLERY! -->
-
-      <section class="amenities" id="spa-gallery">
-        <h2>Gallery</h2>
-        <div class="spa-gallery">
-          <figure class="gallery-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSszOQAw5-RA75C-4-UW7z2XKW0borH9wYSYg&s"
-              alt="Gallery image 1">
-            <figcaption>Treatment Room</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg/250px-Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg"
-              alt="Gallery image 2">
-            <figcaption>Spa Pools</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Stoke_Park_Spa_Treatment_Room.jpg"
-              alt="Gallery image 3">
-            <figcaption>Relaxation Area</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://asdesign-studio.com/wp-content/uploads/2022/03/Massage-room-001-scaled.jpg"
-              alt="Gallery image 4">
-            <figcaption>Massage Room</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://cdn.aquaviaspa.com/img/c/10-category_default.jpg" alt="Gallery image 5">
-            <figcaption>Jacuzzi</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://www.datocms-assets.com/109318/1732272611-ritva-interior.jpg?auto=compress"
-              alt="Gallery image 6">
-            <figcaption>Sauna</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/9439b558529111.5a0035f98af61.jpg"
-              alt="Gallery image 7">
-            <figcaption>Yoga Hall</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img
-              src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e2/68/e5/tea-lounge-at-regent.jpg?w=900&h=500&s=1"
-              alt="Gallery image 8">
-            <figcaption>Tea Lounge</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img
-              src="https://st.hzcdn.com/simgs/pictures/pools/poolside-design-in-thornbury-on-techo-bloc-img~aaa1dda90ddeda46_4-7341-1-0781a09.jpg"
-              alt="Gallery image 9">
-            <figcaption>Poolside</figcaption>
-          </figure>
+    <!-- Services -->
+    <section id="services" class="mb-5">
+  <h2 class="text-center mb-4">Signature Services</h2>
+  <div class="row g-4">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card h-100">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Violet_Hill_Commission_for_Jayfresh_3.jpg/1280px-Violet_Hill_Commission_for_Jayfresh_3.jpg" class="card-img-top" alt="Massage">
+        <div class="card-body">
+          <h5 class="card-title">Deep Tissue Massage</h5>
+          <p class="card-text">60/90 minutes • Relieves muscle tension and improves circulation.</p>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <section class="amenities" id="appointment">
-        <h2>Book a Treatment</h2>
-        <form action="#" method="post" class="card booking-form">
-          <label class="field">
-            <span>Service</span>
-            <select name="service" required>
-              <option value="" disabled selected>Select a service</option>
-              <option>Deep Tissue Massage (60 min)</option>
-              <option>Deep Tissue Massage (90 min)</option>
-              <option>Revitalizing Facial</option>
-              <option>Thermal Suite Pass</option>
-            </select>
-          </label>
-          <label class="field">
-            <span>Date</span>
-            <input type="date" name="date" required>
-          </label>
-          <label class="field">
-            <span>Preferred Time</span>
-            <input type="text" name="time" placeholder="15:00" required>
-          </label>
-          <button type="submit">Confirm Booking</button>
-        </form>
-      </section>
-    </main>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card h-100">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Facial_mask.jpg/1024px-Facial_mask.jpg" class="card-img-top" alt="Facial">
+        <div class="card-body">
+          <h5 class="card-title">Revitalizing Facial</h5>
+          <p class="card-text">Botanical cleanse • Hydration mask • Natural glow finish.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card h-100">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Sauna_2.jpg" class="card-img-top" alt="Sauna">
+        <div class="card-body">
+          <h5 class="card-title">Thermal Suite</h5>
+          <p class="card-text">Sauna • Steam • Cold plunge • Relaxation lounge access.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-    <footer>
-      <p>Group Name: Full Stackers</p>
-      <p>Members: Daniyal A, Alikhan M</p>
-    </footer>
+    <!-- Gallery -->
+   <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 9"></button>
 
-    <script src="dropdown.js"></script>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://bellezi.imgix.net/Vivi-Spa-Beauty-Velvet-Evo-W4-Pro_2023-09-07-075731_hymj.jpg?auto=compress%2Cformat&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1000&q=80&w=2000&s=38f852838994007005506d157bd2394d" class="d-block w-100" alt="1">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Treatment Room</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://media.cntraveller.com/photos/62b32b3ce5d427f5afd7b4b6/16:9/w_4000,h_2250,c_limit/Bronte%20Ocean%20Pool%20In%20Sydney%20Nsw%20AustraliaGettyImages-1254347866.jpeg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Spa Pools</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://goodspaguide--live.s3.amazonaws.com/The-Spa-at-Grand-Jersey-Relaxation-Room_2023-12-11-162855_cmar.jpg" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Relaxation Area</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://asdesign-studio.com/wp-content/uploads/2022/03/Massage-room-001-scaled.jpg" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Massage Room</h5>
+      </div>
+    </div>
+     <div class="carousel-item">
+      <img src="https://cdn.aquaviaspa.com/img/c/10-category_default.jpg" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Jacuzzi</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.datocms-assets.com/109318/1732272611-ritva-interior.jpg?auto=compress" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Sauna</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/9439b558529111.5a0035f98af61.jpg" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Yoga Hall</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e2/68/e5/tea-lounge-at-regent.jpg?w=900&h=500&s=1" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Tea Lounge</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://st.hzcdn.com/simgs/pictures/pools/poolside-design-in-thornbury-on-techo-bloc-img~aaa1dda90ddeda46_4-7341-1-0781a09.jpg" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Poolside</h5>
+      </div>
+    </div>
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<br><br><br><br><br>
+    <!-- Booking Form -->
+    <section id="appointment" class="mb-5">
+      <h2 class="text-center mb-4">Book a Treatment</h2>
+      <form class="card p-4 shadow-sm mx-auto" style="max-width: 600px;">
+        <div class="mb-3">
+          <label class="form-label">Service</label>
+          <select class="form-select" required>
+            <option value="" disabled selected>Select a service</option>
+            <option>Deep Tissue Massage (60 min)</option>
+            <option>Deep Tissue Massage (90 min)</option>
+            <option>Revitalizing Facial</option>
+            <option>Thermal Suite Pass</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Date</label>
+          <input type="date" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Preferred Time</label>
+          <input type="text" class="form-control" placeholder="15:00" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Confirm Booking</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">Group Name: Full Stackers</p>
+    <p class="mb-0">Members: Daniyal A, Alikhan M</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
+<style>
+  .carousel-item{
+    height: 450px;
+  }
+  .carousel-item img {
+    object-fit: contain;
+    width: 100%;
+    height: 500px;
+     background-color: #000;
+    transform: translateY(-30px);
+    /* object-fit: cover; */
+    border-radius: 10px;
+  }
+
+ 
+
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+  }
+</style>
+
 
 </html>
