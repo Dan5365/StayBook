@@ -6,149 +6,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dining</title>
 
+  <link rel="stylesheet" href="dining.css">
   <link rel="icon" href="images/Hotel_icon.ico" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
-<body class="bg-light">
+<body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/kokshetau_logo_03.png" alt="Hotel Logo" height="40">
+  <div class="grid-layout">
+    <header class="navbar">
+      <div class="navbar__logo">
+        <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a>
+
+      </div>
+
+      <nav class="navbar__buttons">
+        <a href="index.html" class="btn">Main</a>
+        <a href="index.html#about" class="btn">About Us</a>
+        <a href="index.html#book" class="btn">Book</a>
+        <a href="index.html#contacts" class="btn">Contacts</a>
+        <a href="profile.html" class="btn">Profile</a>
+
+
+        <div class="dropdown">
+          <a href="#" class="btn dropbtn">Services ▾</a>
+          <div class="dropdown-content">
+            <a href="Spa.html" class="btn">Spa</a>
+            <a href="Dining.html" class="btn">Dining</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html#about" class="sidebar-item">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>About us</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <a href="index.html#book" class="sidebar-item">
+        <ion-icon name="bed-outline"></ion-icon>
+        <span>Book a room</span>
+      </a>
+      <a href="index.html#contacts" class="sidebar-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>Contacts</span>
+      </a>
+      <a href="mailto:info@hotel.kz" class="sidebar-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>Email</span>
+      </a>
+    </aside>
 
-      <div class="collapse navbar-collapse justify-content-end sticky-top" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Main</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#book">Book</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#contacts">Contacts</a></li>
-          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+    <main class="main">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
-              Services
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Spa.html">Spa</a></li>
-              <li><a class="dropdown-item" href="Dining.html">Dining</a></li>
-            </ul>
+      <section class="amenities" id="menu">
+        <h2>Menu Highlights</h2>
+        <ul class="grid">
+          <li class="card">
+            <h3>Breakfast</h3>
+            <p>Fresh pastries, omelettes, fruit bowls.</p>
+          </li>
+          <li class="card">
+            <h3>Lunch</h3>
+            <p>Salads, pastas, grilled fish, seasonal soups.</p>
+          </li>
+          <li class="card">
+            <h3>Dinner</h3>
+            <p>Steak, miso cod, mushroom risotto.</p>
+          </li>
+          <li class="card">
+            <h3>Desserts</h3>
+            <p>Cheesecake, tiramisu, sorbet trio.</p>
           </li>
         </ul>
-      </div>
-    </div>
-  </nav>
+      </section>
 
-  <!-- Main -->
-  <main class="container my-5">
 
-    <!-- Menu -->
-    <section id="menu" class="mb-5">
-      <h2 class="text-center mb-4">Menu Highlights</h2>
-      <div class="row g-4">
-        <div class="col-sm-6 col-md-3">
-          <div class="card text-center h-100">
-            <div class="card-body">
-              <h5 class="card-title">Breakfast</h5>
-              <p class="card-text">Fresh pastries, omelettes, fruit bowls.</p>
-            </div>
-          </div>
+      <section class="amenities" id="gallery">
+        <h2>Gallery</h2>
+        <div class="grid">
+          <img class="img-resp card"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Heiligengrabe%2C_Kloster_Stift_zum_Heiligengrabe%2C_Abtei%2C_Speiseraum_--_2017_--_7082-8.jpg/1280px-Heiligengrabe%2C_Kloster_Stift_zum_Heiligengrabe%2C_Abtei%2C_Speiseraum_--_2017_--_7082-8.jpg"
+            alt="Dining room">
+          <img class="img-resp card"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Traditional_pizza_from_Napoli.jpg/1280px-Traditional_pizza_from_Napoli.jpg"
+            alt="Signature dish">
+          <img class="img-resp card" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/GermanChocolateCake.jpg"
+            alt="Dessert">
         </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card text-center h-100">
-            <div class="card-body">
-              <h5 class="card-title">Lunch</h5>
-              <p class="card-text">Salads, pastas, grilled fish, seasonal soups.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card text-center h-100">
-            <div class="card-body">
-              <h5 class="card-title">Dinner</h5>
-              <p class="card-text">Steak, miso cod, mushroom risotto.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="card text-center h-100">
-            <div class="card-body">
-              <h5 class="card-title">Desserts</h5>
-              <p class="card-text">Cheesecake, tiramisu, sorbet trio.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="mb-5">
-      <h2 class="text-center mb-4">Gallery</h2>
-      <div class="row g-3">
-        <div class="col-sm-6 col-md-4">
-          <div class="card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Heiligengrabe%2C_Kloster_Stift_zum_Heiligengrabe%2C_Abtei%2C_Speiseraum_--_2017_--_7082-8.jpg/1280px-Heiligengrabe%2C_Kloster_Stift_zum_Heiligengrabe%2C_Abtei%2C_Speiseraum_--_2017_--_7082-8.jpg"
-              class="card-img-top" alt="Dining room">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div class="card">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Traditional_pizza_from_Napoli.jpg/1280px-Traditional_pizza_from_Napoli.jpg"
-              class="card-img-top" alt="Signature dish">
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-          <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/GermanChocolateCake.jpg"
-              class="card-img-top" alt="Dessert">
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Reservation -->
-    <section id="reserve" class="mb-5">
-      <h2 class="text-center mb-4">Reserve a Table</h2>
-      <form class="card p-4 shadow-sm mx-auto" style="max-width: 600px;">
-        <div class="mb-3">
-          <label class="form-label">Date</label>
-          <input type="date" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Time</label>
-          <input type="text" class="form-control" placeholder="19:00" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Guests</label>
-          <select class="form-select" required>
-            <option value="" disabled selected>Select</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4+</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Book Now</button>
-      </form>
-    </section>
-  </main>
+      <section class="amenities" id="reserve">
+        <h2>Reserve a Table</h2>
+        <form action="#" method="post" class="card" style="max-width:600px;margin:0 auto;">
+          <label class="field">
+            <span>Date</span>
+            <input type="date" name="date" required>
+          </label>
+          <label class="field">
+            <span>Time</span>
+            <input type="text" name="time" placeholder="19:00" required>
+          </label>
+          <label class="field">
+            <span>Guests</span>
+            <select name="guests" required>
+              <option value="" disabled selected>Select</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4+</option>
+            </select>
+          </label>
+          <button type="submit">Book Now</button>
+        </form>
+      </section>
+    </main>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">Group Name: Full Stackers</p>
-    <p class="mb-0">Members: Daniyal A, Alikhan M</p>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <footer>
+      <p>Group Name: Full Stackers</p>
+      <p>Members: Daniyal A, Alikhan M</p>
+    </footer>
+  </div>
 </body>
+
+
+
 </html>
