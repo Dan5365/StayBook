@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>spa</title>
+
+  <link rel="stylesheet" href="spa.css">
+  <link rel="icon" href="images/Hotel_icon.ico">
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+  <div class="grid-layout">
+    <header class="navbar">
+      <div class="navbar__logo">
+        <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a>
+      </div>
+
+      <nav class="navbar__buttons">
+        <a href="index.html" class="btn">Main</a>
+        <a href="index.html#about" class="btn">About Us</a>
+        <a href="index.html#book" class="btn">Book</a>
+        <a href="index.html#contacts" class="btn">Contacts</a>
+        <a href="profile.html" class="btn">Profile</a>
+
+
+        <div class="dropdown">
+          <a href="#" class="btn dropbtn">Services ▾</a>
+          <div class="dropdown-content">
+            <a href="Spa.html" class="btn">Spa</a>
+            <a href="Dining.html" class="btn">Dining</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html#about" class="sidebar-item">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>About us</span>
+      </a>
+      <a href="index.html#book" class="sidebar-item">
+        <ion-icon name="bed-outline"></ion-icon>
+        <span>Book a room</span>
+      </a>
+      <a href="index.html#contacts" class="sidebar-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>Contacts</span>
+      </a>
+      <a href="mailto:info@hotel.kz" class="sidebar-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>Email</span>
+      </a>
+    </aside>
+
+
+    <main class="main">
+      <!-- Услуги -->
+      <section class="amenities" id="services">
+        <h2>Signature Services</h2>
+        <ul class="flex">
+          <li class="card">
+            <img class="img-resp"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Violet_Hill_Commission_for_Jayfresh_3.jpg/1280px-Violet_Hill_Commission_for_Jayfresh_3.jpg"
+              alt="Massage">
+            <h3>Deep Tissue Massage</h3>
+            <p>60/90 minutes • Relieves muscle tension and improves circulation.</p>
+          </li>
+          <li class="card">
+            <img class="img-resp"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Facial_mask.jpg/1024px-Facial_mask.jpg"
+              alt="Facial">
+            <h3>Revitalizing Facial</h3>
+            <p>Botanical cleanse • Hydration mask • Natural glow finish.</p>
+          </li>
+          <li class="card">
+            <img class="img-resp" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Sauna_2.jpg"
+              alt="Sauna / Steam">
+            <h3>Thermal Suite</h3>
+            <p>Sauna • Steam • Cold plunge • Relaxation lounge access.</p>
+          </li>
+        </ul>
+      </section>
+
+
+
+      <!-- GALLERY! -->
+
+      <section class="amenities" id="spa-gallery">
+        <h2>Gallery</h2>
+        <div class="spa-gallery">
+          <figure class="gallery-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSszOQAw5-RA75C-4-UW7z2XKW0borH9wYSYg&s"
+              alt="Gallery image 1">
+            <figcaption>Treatment Room</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg/250px-Ognyanovo-Delta-Hotel-Mineral-water-swimming--pools.jpg"
+              alt="Gallery image 2">
+            <figcaption>Spa Pools</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Stoke_Park_Spa_Treatment_Room.jpg"
+              alt="Gallery image 3">
+            <figcaption>Relaxation Area</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://asdesign-studio.com/wp-content/uploads/2022/03/Massage-room-001-scaled.jpg"
+              alt="Gallery image 4">
+            <figcaption>Massage Room</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://cdn.aquaviaspa.com/img/c/10-category_default.jpg" alt="Gallery image 5">
+            <figcaption>Jacuzzi</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://www.datocms-assets.com/109318/1732272611-ritva-interior.jpg?auto=compress"
+              alt="Gallery image 6">
+            <figcaption>Sauna</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/9439b558529111.5a0035f98af61.jpg"
+              alt="Gallery image 7">
+            <figcaption>Yoga Hall</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e2/68/e5/tea-lounge-at-regent.jpg?w=900&h=500&s=1"
+              alt="Gallery image 8">
+            <figcaption>Tea Lounge</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="https://st.hzcdn.com/simgs/pictures/pools/poolside-design-in-thornbury-on-techo-bloc-img~aaa1dda90ddeda46_4-7341-1-0781a09.jpg"
+              alt="Gallery image 9">
+            <figcaption>Poolside</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="amenities" id="appointment">
+        <h2>Book a Treatment</h2>
+        <form action="#" method="post" class="card booking-form">
+          <label class="field">
+            <span>Service</span>
+            <select name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Deep Tissue Massage (60 min)</option>
+              <option>Deep Tissue Massage (90 min)</option>
+              <option>Revitalizing Facial</option>
+              <option>Thermal Suite Pass</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Date</span>
+            <input type="date" name="date" required>
+          </label>
+          <label class="field">
+            <span>Preferred Time</span>
+            <input type="text" name="time" placeholder="15:00" required>
+          </label>
+          <button type="submit">Confirm Booking</button>
+        </form>
+      </section>
+    </main>
+
+
+    <footer>
+      <p>Group Name: Full Stackers</p>
+      <p>Members: Daniyal A, Alikhan M</p>
+    </footer>
+
+    <script src="dropdown.js"></script>
+</body>
+
+</html>

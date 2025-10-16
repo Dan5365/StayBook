@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/Hotel_icon.ico" />
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+  <div class="grid-layout">
+    <!-- HEADER -->
+    <header class="navbar">
+      <div class="navbar__logo">
+        <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a>
+      </div>
+      <nav class="navbar__buttons">
+        <a href="index.html" class="btn">Main</a>
+        <a href="#about" class="btn">About Us</a>
+        <a href="#book" class="btn">Book</a>
+        <a href="#contacts" class="btn">Contacts</a>
+        <a href="profile.html" class="btn">Profile</a>
+        <div class="dropdown">
+          <a href="#" class="btn dropbtn">Services ▾</a>
+          <div class="dropdown-content">
+            <a href="Spa.html" class="btn">Spa</a>
+            <a href="Dining.html" class="btn">Dining</a>
+            <button id="toggle-theme" class="btn theme-btn">Toggle Theme</button>
+          </div>
+        </div>
+     
+      </nav>
+    </header>
+
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="#about" class="sidebar-item">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>About us</span>
+      </a>
+      <a href="#book" class="sidebar-item">
+        <ion-icon name="bed-outline"></ion-icon>
+        <span>Book a room</span>
+      </a>
+      <a href="#contacts" class="sidebar-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>Contacts</span>
+      </a>
+      <a href="mailto:info@hotel.kz" class="sidebar-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>Email</span>
+      </a>
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+      <!-- Hero -->
+      <section class="hero">
+        <h1>Welcome to our hotel</h1>
+        <p>Comfortable rooms and the best service for your holiday.</p>
+        <a href="#about"><button type="button" class="cta-btn">Book now</button></a>
+      </section>
+
+      <!-- About -->
+      <section class="about" id="about">
+        <h2>About us</h2>
+        <p>
+          Our hotel is located in a picturesque location surrounded by nature,
+          offering our guests a peaceful and relaxing atmosphere. We combine
+          modern design with traditional hospitality to make your stay as
+          comfortable as possible.
+        </p>
+
+        <div class="gallery-container">
+          <div class="gallery">
+            <div class="room">
+              <p class="room-title">Standard</p>
+              <img src="https://optim.tildacdn.pro/tild6539-6163-4630-a138-333562323436/-/format/webp/EPH_0314.jpg.webp"
+                alt="Standard Room" class="circle-img">
+            </div>
+            <div class="room">
+              <p class="room-title">Semi-suite</p>
+              <img src="https://optim.tildacdn.pro/tild3265-6161-4331-b431-303834393333/-/format/webp/EPH_0302.jpg.webp"
+                alt="Semi-suite Room" class="circle-img">
+            </div>
+            <div class="room">
+              <p class="room-title">Semi-Suite twin</p>
+              <img src="https://optim.tildacdn.pro/tild3861-3230-4066-a562-616330303564/-/format/webp/photo-93.jpg.webp"
+                alt="Semi-Suite twin Room" class="circle-img">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking -->
+      <section class="booking-form" id="book">
+        <h2>Book a room</h2>
+        <form id="booking-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Type your name">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Type an email">
+
+          <label for="date">Check-in date</label>
+          <input type="date" id="date">
+
+          <button type="submit" class="cta-btn">Send</button>
+        </form>
+      </section>
+
+
+
+      <section class="faq" id="faq">
+        <h2>FAQ</h2>
+        <div class="accordion">
+          <div class="accordion__item">
+            <button class="accordion__header">What time is check-in/check-out?</button>
+            <div class="accordion__content">
+              <p>Check-in from 14:00, check-out until 12:00. Early/late options on request.</p>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__header">Do you offer airport transfer?</button>
+            <div class="accordion__content">
+              <p>Yes, we can arrange a transfer for an additional fee. Contact reception.</p>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <button class="accordion__header">Is breakfast included?</button>
+            <div class="accordion__content">
+              <p>Breakfast is included in most rates; please check your booking details.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<section class="popup-demo">
+  <button type="button" class="popup-trigger" id="popup-open">
+    📩 Subscribe to our Newsletter
+  </button>
+
+  <div id="popup-overlay" class="popup-overlay popup-hidden" aria-hidden="true">
+    <div class="popup-window" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+      <button type="button" id="popup-close" class="popup-close" aria-label="Close popup">&times;</button>
+      <h3 id="popup-title" class="popup-title">Stay Updated!</h3>
+      <p class="popup-text">Subscribe to receive our latest news and offers.</p>
+
+      <form id="popup-form" class="popup-form">
+        <label for="popup-email" class="popup-label">Email:</label>
+        <input id="popup-email" class="popup-input" type="email" required placeholder="you@example.com" />
+        <button class="popup-btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+      <!-- Contacts -->
+      <section class="contacts" id="contacts">
+        <h2>Contacts</h2>
+        <p>Contact us for reservations and questions.</p>
+        <div class="contacts-info">
+          <div class="contact-item">
+            <ion-icon name="earth-outline"></ion-icon>
+            <h3>Address</h3>
+            <p>Almaty, Panfilova str., 15</p>
+            <button>Find on Map</button>
+          </div>
+          <div class="contact-item">
+            <ion-icon name="call-outline"></ion-icon>
+            <h3>Telephone</h3>
+            <p><a href="tel:+77001234567">+7 (700) 123-45-67</a></p>
+            <button>Call Now</button>
+          </div>
+          <div class="contact-item">
+            <ion-icon name="mail-outline"></ion-icon>
+            <h3>Email</h3>
+            <p><a href="mailto:info@hotel.kz">info@hotel.kz</a></p>
+            <button>Email Us</button>
+          </div>
+        </div>
+      </section>
+
+
+ 
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Group Name: Full Stackers</p>
+      <p>Members: Daniyal A, Alikhan M</p>
+       <p>&copy; 2025 My Website</p>
+  <div id="datetime-container"></div>
+    </footer>
+    <script src="main.js"></script>     
+    <script src="pop-time.js"></script>       
+
+  </div>
+</body>
+
+</html>

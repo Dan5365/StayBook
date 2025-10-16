@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="profile.css">
+  <link rel="icon" href="images/Hotel_icon.ico" />
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+
+  <div class="grid-layout">
+    <header class="navbar">
+      <div class="navbar__logo">
+        <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a>
+      </div>
+
+      <nav class="navbar__buttons">
+        <a href="index.html" class="btn">Main</a>
+        <a href="index.html#about" class="btn">About Us</a>
+        <a href="index.html#book" class="btn">Book</a>
+        <a href="index.html#contacts" class="btn">Contacts</a>
+        <a href="profile.html" class="btn">Profile</a>
+
+
+        <div class="dropdown">
+          <a href="#" class="btn dropbtn">Services ▾</a>
+          <div class="dropdown-content">
+            <a href="Spa.html" class="btn">Spa</a>
+            <a href="Dining.html" class="btn">Dining</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html#about" class="sidebar-item">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>About us</span>
+      </a>
+      <a href="index.html#book" class="sidebar-item">
+        <ion-icon name="bed-outline"></ion-icon>
+        <span>Book a room</span>
+      </a>
+      <a href="index.html#contacts" class="sidebar-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>Contacts</span>
+      </a>
+      <a href="mailto:info@hotel.kz" class="sidebar-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>Email</span>
+      </a>
+    </aside>
+
+    <main class="main">
+      <section class="bg-section">
+        <h2>Change Background Color</h2>
+        <button id="bg-change-btn">Change Background</button>
+      </section>
+
+      <section class="profile-page">
+        <h2>Profile</h2>
+        <div class="form-container">
+
+          <!-- Форма регистрации -->
+          <div class="form-box" id="register-box">
+            <h3>Register</h3>
+
+
+            <form id="register-form">
+              <label for="reg-name">Name</label>
+              <input type="text" id="reg-name" placeholder="Enter your name">
+
+              <label for="reg-email">Email</label>
+              <input type="email" id="reg-email" placeholder="Enter your email">
+
+              <label for="reg-password">Password</label>
+              <input type="password" id="reg-password" placeholder="Create a password">
+
+              <label for="reg-confirm">Confirm Password</label>
+              <input type="password" id="reg-confirm" placeholder="Repeat your password">
+
+              <button type="submit" class="cta-btn">Register</button>
+            </form>
+
+
+
+            <p class="switch-text">Already have an account?
+              <a href="#" id="show-login">Login here</a>
+            </p>
+          </div>
+
+          <!-- Форма входа -->
+          <div class="form-box" id="login-box" style="display:none;">
+            <h3>Login</h3>
+            <form id="login-form">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" placeholder="Enter your email">
+
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" placeholder="Enter your password">
+
+              <button type="submit" class="cta-btn">Login</button>
+            </form>
+
+            <p class="switch-text">Don’t have an account?
+              <a href="#" id="show-register">Register here</a>
+            </p>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Group Name: Full Stackers</p>
+      <p>Members: Daniyal A, Alikhan M</p>
+    </footer>
+</body>
+
+<script src="profile.js"></script>
+<script src="reg-log.js"></script>
+<script src="main.js"></script>
+
+</html>
