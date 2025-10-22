@@ -1,0 +1,50 @@
+@import url("styles.css");
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+ 
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#stars span {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#stars span.active {
+  color: gold;
+  transform: scale(1.2);
+}
+
+footer{
+    margin-top: 20%;
+}
+#stars span {
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.3;               
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+#stars span.active {
+  opacity: 1;                
+  transform: scale(1.2);     
+}

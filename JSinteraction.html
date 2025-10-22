@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking</title>
+  <link rel="stylesheet" href="JSinteraction.css">
+  <link rel="icon" href="images/Hotel_icon.ico" />
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+  <div class="grid-layout">
+    <!-- HEADER -->
+    <header class="navbar">
+      <div class="navbar__logo">
+        <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a>
+      </div>
+      <nav class="navbar__buttons">
+        <a href="index.html" class="btn">Main</a>
+        <a href="#about" class="btn">About Us</a>
+        <a href="#book" class="btn">Book</a>
+        <a href="#contacts" class="btn">Contacts</a>
+        <a href="profile.html" class="btn">Profile</a>
+        <div class="dropdown">
+          <a href="#" class="btn dropbtn">Services ▾</a>
+          <div class="dropdown-content">
+            <a href="Spa.html" class="btn">Spa</a>
+            <a href="Dining.html" class="btn">Dining</a>
+            <button id="toggle-theme" class="btn theme-btn">Toggle Theme</button>
+            <a href="JsInteraction.html" class="btn">JSInteractions</a>
+          </div>
+        </div>
+     
+      </nav>
+    </header>
+
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="#about" class="sidebar-item">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>About us</span>
+      </a>
+      <a href="#book" class="sidebar-item">
+        <ion-icon name="bed-outline"></ion-icon>
+        <span>Book a room</span>
+      </a>
+      <a href="#contacts" class="sidebar-item">
+        <ion-icon name="call-outline"></ion-icon>
+        <span>Contacts</span>
+      </a>
+      <a href="mailto:info@hotel.kz" class="sidebar-item">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>Email</span>
+      </a>
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+  <h1 id="greeting">Hello, User!</h1>
+
+
+  <div class="rating">
+    <h2>Rate your mood:</h2>
+    <div id="stars">
+      <span>⭐</span>
+      <span>⭐</span>
+      <span>⭐</span>
+      <span>⭐</span>
+      <span>⭐</span>
+    </div>
+  </div>
+
+  <div class="quote-section">
+    <button id="quoteBtn">Get Random Quote</button>
+    <p id="quoteText">Click the button for a quote!</p>
+  </div>
+
+  <div class="sound-section">
+    <button id="soundBtn">🔊 Play Sound</button>
+    <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-29.mp3"></audio>
+  </div>
+
+
+
+
+
+
+ 
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Group Name: Full Stackers</p>
+      <p>Members: Daniyal A, Alikhan M</p>
+       <p>&copy; 2025 My Website</p>
+  <div id="datetime-container"></div>
+    </footer>
+    <script src="main.js"></script>     
+    <script src="pop-time.js"></script>       
+
+  </div>
+</body>
+<script src="JSinteraction.js"></script>
+</html>
