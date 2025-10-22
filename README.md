@@ -1,35 +1,38 @@
-# HotelBooking — Educational Project
+# 🏨 StayBook — Hotel Booking Educational Project
 
-HotelBooking is a learning project for building a **hotel booking website**.  
-Currently, it is created using **HTML, CSS, JavaScript, jQuery**, and other basic web technologies.
-
----
-
-## Features
-
-* Static hotel booking pages
-* Interactive UI with jQuery
-* Responsive layout with HTML & CSS
+**StayBook** — учебный проект для создания сайта бронирования отелей.
+Сейчас реализован с использованием **HTML, CSS, JavaScript и jQuery**, но в будущем планируется интеграция **FastAPI** и **React** для полноценного функционала и улучшенного интерфейса.
 
 ---
 
-## Tech Stack
+## 🔹 Features / Возможности
 
-* **Frontend:** HTML, CSS, JavaScript, jQuery  
-* **(Planned)** **Backend:** FastAPI (for real booking functionality)  
-* **(Planned)** **Frontend Upgrade:** React (for cleaner, professional, and more convenient code structure)
-
----
-
-## Future Plans
-
-* Implement backend with FastAPI to handle real booking requests  
-* Add user accounts and authentication  
-* Rebuild the frontend in React for better maintainability and UX  
-* Connect to a database for storing reservations and hotel data  
+* 📄 Статические страницы бронирования отелей
+* ✨ Интерактивный интерфейс с использованием jQuery
+* 📱 Адаптивная верстка для разных устройств
+* ⚡ (В разработке) **React frontend** для более удобного и современного кода
+* 🔧 (В разработке) **FastAPI backend** для обработки реальных запросов на бронирование
 
 ---
 
-## Status
+## 🔹 Tech Stack 🛠
 
-This project is in progress and currently serves as an **educational prototype**.
+* **Frontend (текущее):** HTML, CSS, JavaScript, jQuery
+* **Frontend (future):** React
+* **Backend (future):** Python, FastAPI
+* **Database (future):** SQLite / PostgreSQL / MySQL
+
+---
+
+## 🔹 Future Plans 🚀
+
+* Реализовать **backend на FastAPI** для обработки бронирований
+* Добавить **регистрацию пользователей и авторизацию**
+* Переписать фронтенд на **React** для улучшения UX и поддерживаемости
+* Подключить **базу данных** для хранения информации о пользователях, бронированиях и отелях
+
+---
+
+## 🔹 Status 🏗
+
+Проект находится в **активной разработке** и в текущей версии служит **образовательным прототипом**.
