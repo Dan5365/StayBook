@@ -26,7 +26,7 @@
 .card {
   background: #fff;
   border-radius: 12px;
-  padding: 20px;
+  padding: 25px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -131,3 +131,18 @@ input.invalid, select.invalid { border: 1px solid #e53935 !important; outline: n
 .accordion__header { width: 100%; text-align: left; padding: 14px 16px; font-weight: 600; cursor: pointer; background: #f7f7f7; border: none; }
 .accordion__content { padding: 0 16px; overflow: hidden; transition: max-height 0.3s ease; }
 .accordion__content p { margin: 14px 0 16px; }
+
+
+/* ===== jQuery Part 1: Search UI ===== */
+.search-box { position: relative; max-width: 480px; margin: 12px 0; }
+#menuSearchInput { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; }
+#menuSuggestions { 
+  position: absolute; left: 0; right: 0; 
+  background: #fff; border: 1px solid #ddd; border-top: none; 
+  display: none; list-style: none; margin: 0; padding: 0; z-index: 10; 
+  border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;
+}
+#menuSuggestions li { padding: 8px 12px; cursor: pointer; }
+#menuSuggestions li:hover { background: #f5f5f5; }
+/* Highlight color */
+mark { background: #ffe08a; padding: 0 2px; border-radius: 2px; }

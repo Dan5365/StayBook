@@ -1,80 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Hotel Booking</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="images/Hotel_icon.ico" />
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- jQuery (CDN) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
+
 
 <body>
 
+    <!-- Scroll Progress Bar (Task 4) -->
+  <div id="scrollProgress" aria-hidden="true">
+    <div class="bar"></div>
+  </div>
+
+
   <div class="grid-layout">
+
+
+
     <!-- HEADER -->
+
     <header class="navbar">
+
       <div class="navbar__logo">
         <a href="index.html"><img src="images/kokshetau_logo_03.png" alt="Hotel Logo"></a>
       </div>
+
       <nav class="navbar__buttons">
+
         <a href="index.html" class="btn">Main</a>
         <a href="#about" class="btn">About Us</a>
         <a href="#book" class="btn">Book</a>
         <a href="#contacts" class="btn">Contacts</a>
         <a href="profile.html" class="btn">Profile</a>
+
         <div class="dropdown">
           <a href="#" class="btn dropbtn">Services ▾</a>
+
           <div class="dropdown-content">
+
             <a href="Spa.html" class="btn">Spa</a>
             <a href="Dining.html" class="btn">Dining</a>
-            <button id="toggle-theme" class="btn theme-btn">Toggle Theme</button>
-                    <a href="JsInteraction.html" class="btn">JSInteractions</a>
-
+            
           </div>
+
         </div>
      
       </nav>
+
     </header>
 
 
 
     <!-- Sidebar -->
+
     <aside class="sidebar">
+
       <a href="#about" class="sidebar-item">
         <ion-icon name="information-circle-outline"></ion-icon>
         <span>About us</span>
       </a>
+
       <a href="#book" class="sidebar-item">
         <ion-icon name="bed-outline"></ion-icon>
         <span>Book a room</span>
       </a>
+
       <a href="#contacts" class="sidebar-item">
         <ion-icon name="call-outline"></ion-icon>
         <span>Contacts</span>
       </a>
+
       <a href="mailto:info@hotel.kz" class="sidebar-item">
         <ion-icon name="mail-outline"></ion-icon>
         <span>Email</span>
       </a>
+
     </aside>
 
 
 
     <!-- MAIN CONTENT -->
+
     <main class="main">
 
       <!-- Hero -->
+
       <section class="hero">
         <h1>Welcome to our hotel</h1>
         <p>Comfortable rooms and the best service for your holiday.</p>
         <a href="#about"><button type="button" class="cta-btn">Book now</button></a>
       </section>
 
+
+            <!-- Stats (Task 5) -->
+      <section id="stats" class="stats">
+        <h2>Our Numbers</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="num" data-target="1200">0</div>
+            <p>Happy Guests</p>
+          </div>
+          <div class="stat">
+            <div class="num" data-target="85">0</div>
+            <p>Cozy Rooms</p>
+          </div>
+          <div class="stat">
+            <div class="num" data-target="450">0</div>
+            <p>5★ Reviews</p>
+          </div>
+        </div>
+      </section>
+
+
+
       <!-- About -->
+
       <section class="about" id="about">
         <h2>About us</h2>
         <p>
@@ -105,7 +159,11 @@
         </div>
       </section>
 
+
+
+
       <!-- Booking -->
+
       <section class="booking-form" id="book">
         <h2>Book a room</h2>
         <form id="booking-form">
@@ -148,26 +206,27 @@
         </div>
       </section>
 
-<section class="popup-demo">
-  <button type="button" class="popup-trigger" id="popup-open">
-    📩 Subscribe to our Newsletter
-  </button>
 
-  <div id="popup-overlay" class="popup-overlay popup-hidden" aria-hidden="true">
-    <div class="popup-window" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-      <button type="button" id="popup-close" class="popup-close" aria-label="Close popup">&times;</button>
-      <h3 id="popup-title" class="popup-title">Stay Updated!</h3>
-      <p class="popup-text">Subscribe to receive our latest news and offers.</p>
 
-      <form id="popup-form" class="popup-form">
-        <label for="popup-email" class="popup-label">Email:</label>
-        <input id="popup-email" class="popup-input" type="email" required placeholder="you@example.com" />
-        <button class="popup-btn" type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
-</section>
+      <section class="popup-demo">
+        <button type="button" class="popup-trigger" id="popup-open">
+          📩 Subscribe to our Newsletter
+        </button>
 
+        <div id="popup-overlay" class="popup-overlay popup-hidden" aria-hidden="true">
+          <div class="popup-window" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+            <button type="button" id="popup-close" class="popup-close" aria-label="Close popup">&times;</button>
+            <h3 id="popup-title" class="popup-title">Stay Updated!</h3>
+            <p class="popup-text">Subscribe to receive our latest news and offers.</p>
+
+            <form id="popup-form" class="popup-form">
+              <label for="popup-email" class="popup-label">Email:</label>
+              <input id="popup-email" class="popup-input" type="email" required placeholder="you@example.com" />
+              <button class="popup-btn" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
 
 
 
@@ -202,17 +261,46 @@
     </main>
 
 
+
     <!-- FOOTER -->
+
     <footer>
+
       <p>Group Name: Full Stackers</p>
       <p>Members: Daniyal A, Alikhan M</p>
        <p>&copy; 2025 My Website</p>
-  <div id="datetime-container"></div>
+
+    <div id="datetime-container"></div>
+
     </footer>
-    <script src="main.js"></script>     
-    <script src="pop-time.js"></script>       
+
+
+    <script src="js/main.js"></script>     
+    <script src="js/pop-time.js"></script>       
+    <script src="js/keyboard.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/jquery-part2.js"></script>
+
 
   </div>
+
+
+      <!-- ===== jQuery Task 6: Loading Spinner on Submit ===== -->
+    <section id="contact" class="contact-form">
+      <h2>Quick Contact</h2>
+      <form class="js-simulate-submit" action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit" class="btn">
+          <span class="spinner hidden" aria-hidden="true"></span>
+          <span class="btn-text">Send Message</span>
+        </button>
+      </form>
+    </section>
+
+
+
 </body>
 
 </html>

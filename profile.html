@@ -5,11 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
-  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="css/profile.css">
   <link rel="icon" href="images/Hotel_icon.ico" />
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- jQuery (CDN) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -61,6 +64,41 @@
     </aside>
 
     <main class="main">
+
+      <div class="profile-wrap">
+        <!-- Greeting -->
+            <div class="profile-greeting">
+              <label for="nameInput">Your name:</label>
+              <input id="nameInput" type="text" placeholder="Enter your name">
+              <button id="saveNameBtn">Save</button>
+              <p id="greetingText">Hello!</p>
+            </div>
+
+            <!-- Rating + Quote -->
+            <div class="profile-rating">
+              <p>Rate your mood today:</p>
+              <div id="stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+              </div>
+              <p id="ratingLabel">Your rating: 0/5</p>
+              <p id="quoteBox">Pick a rating to see a quote.</p>
+            </div>
+
+            <!-- Sound (put any short click sound file here) -->
+            <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-11.mp3" preload="auto"></audio>
+      </div>
+
+
+
+     
+
+
+
+
       <section class="bg-section">
         <h2>Change Background Color</h2>
         <button id="bg-change-btn">Change Background</button>
@@ -126,8 +164,11 @@
     </footer>
 </body>
 
-<script src="profile.js"></script>
-<script src="reg-log.js"></script>
-<script src="main.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/reg-log.js"></script>
+<script src="js/main.js"></script>
+<script src="js/keyboard.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/profile-ui.js"></script>
 
 </html>

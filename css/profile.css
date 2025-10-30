@@ -97,3 +97,17 @@
 .switch-text a:hover {
   text-decoration: underline;
 }
+
+
+/*Aligning*/
+
+.profile-wrap {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+#stars { display: inline-flex; gap: 8px; margin: 6px 0; }
+#ratingLabel, #quoteBox { margin-top: 8px; }
+.profile-greeting input { margin-right: 8px; }

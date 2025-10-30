@@ -6,11 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dining</title>
 
-  <link rel="stylesheet" href="dining.css">
+  <link rel="stylesheet" href="css/dining.css">
   <link rel="icon" href="images/Hotel_icon.ico" />
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- jQuery (CDN) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -66,6 +70,14 @@
 
       <section class="amenities" id="menu">
         <h2>Menu Highlights</h2>
+
+          <!-- Simple jQuery Search UI -->
+          <div id="menu-search" class="search-box">
+            <input id="menuSearchInput" type="text" placeholder="Search dishes... (try: Breakfast, Steak, etc.)" />
+            <ul id="menuSuggestions" class="suggestions"></ul>
+          </div>
+
+
         <ul class="grid">
           <li class="card">
             <h3>Breakfast</h3>
@@ -131,8 +143,12 @@
       <p>Group Name: Full Stackers</p>
       <p>Members: Daniyal A, Alikhan M</p>
     </footer>
-    <script src="main.js"></script>         
+    <script src="js/main.js"></script>         
+    <script src="js/keyboard.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/jquery-part1.js"></script>
 
+    
   </div>
 </body>
 
