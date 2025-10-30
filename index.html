@@ -2,11 +2,13 @@
 <html lang="en">
 
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Hotel Booking</title>
+  
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="images/Hotel_icon.ico" />
@@ -21,10 +23,17 @@
 
 <body>
 
+    <!-- Toast container -->
+  <div id="toastWrap" aria-live="polite"></div>
+
+
     <!-- Scroll Progress Bar (Task 4) -->
   <div id="scrollProgress" aria-hidden="true">
     <div class="bar"></div>
   </div>
+
+
+  
 
 
   <div class="grid-layout">
@@ -104,6 +113,11 @@
         <p>Comfortable rooms and the best service for your holiday.</p>
         <a href="#about"><button type="button" class="cta-btn">Book now</button></a>
       </section>
+
+
+
+
+
 
 
             <!-- Stats (Task 5) -->
@@ -257,6 +271,39 @@
       </section>
 
 
+              <!-- ===== jQuery Task 6: Loading Spinner on Submit ===== -->
+      <section id="contact" class="contact-form">
+        <h2>Quick Contact</h2>
+        <form class="js-simulate-submit" action="#" method="post">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn">
+            <span class="spinner hidden" aria-hidden="true"></span>
+            <span class="btn-text">Send Message</span>
+          </button>
+        </form>
+      </section>
+
+
+
+      <div class="copy-row">
+        <code id="copyText1">PROMO-2025-STAY</code>
+        <button class="copy-btn" data-target="#copyText1">Copy</button>
+      </div>
+
+      <div class="copy-row">
+        <span id="copyText2">+7 701 123 45 67</span>
+        <button class="copy-btn" data-target="#copyText2">Copy</button>
+      </div>
+
+      
+      <section class="tools">
+        <button id="demoToast" class="btn toast-demo">Show Toast</button>
+
+      </section>
+
+
  
     </main>
 
@@ -280,24 +327,12 @@
     <script src="js/keyboard.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/jquery-part2.js"></script>
+    <script src="js/jquery-part3.js"></script>
 
 
   </div>
 
 
-      <!-- ===== jQuery Task 6: Loading Spinner on Submit ===== -->
-    <section id="contact" class="contact-form">
-      <h2>Quick Contact</h2>
-      <form class="js-simulate-submit" action="#" method="post">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message"></textarea>
-        <button type="submit" class="btn">
-          <span class="spinner hidden" aria-hidden="true"></span>
-          <span class="btn-text">Send Message</span>
-        </button>
-      </form>
-    </section>
 
 
 

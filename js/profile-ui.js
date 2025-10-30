@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var saveNameBtn = document.getElementById("saveNameBtn");
   var greetingText = document.getElementById("greetingText");
 
+  // load saved name (optional but nice)
   var savedName = localStorage.getItem("profileName");
   if (savedName) {
     greetingText.textContent = "Hello, " + savedName + "!";
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         greetingText.textContent = "Hello!";
         localStorage.removeItem("profileName");
       }
-
+      // small click sound on save
       var snd = document.getElementById("clickSound");
       if (snd) { snd.currentTime = 0; snd.play(); }
     });
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var ratingLabel = document.getElementById("ratingLabel");
   var quoteBox = document.getElementById("quoteBox");
 
+  // simple quote pools
   var quotesBad = [
     "Tough day? Small steps count.",
     "It’s okay to pause and breathe.",
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function setRating(value) {
+    // highlight stars
     for (var i = 0; i < stars.length; i++) {
       var v = parseInt(stars[i].getAttribute("data-value"), 10);
       if (v <= value) {
@@ -61,8 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
         stars[i].classList.remove("active");
       }
     }
+    // label
     if (ratingLabel) ratingLabel.textContent = "Your rating: " + value + "/5";
 
+    // pick quote by mood
     var quote = "";
     if (value <= 2) {
       quote = pickRandom(quotesBad);
@@ -73,10 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (quoteBox) quoteBox.textContent = quote;
 
+    // play sound
     var snd = document.getElementById("clickSound");
     if (snd) { snd.currentTime = 0; snd.play(); }
   }
 
+  // attach click handlers
   for (var j = 0; j < stars.length; j++) {
     stars[j].addEventListener("click", function () {
       var val = parseInt(this.getAttribute("data-value"), 10);

@@ -758,8 +758,48 @@ body { padding-top: 6px; } /* keeps content from hiding under the bar */
   position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
   background: #111; color: #fff; padding: 8px 12px; border-radius: 6px;
   z-index: 9999; font-size: 0.9rem; opacity: 0.95;
+
 }
+
+
+.tools { position: relative; z-index: 20; padding: 16px; }
+
+/* make the demo button visible and clickable */
+.toast-demo {
+  display: inline-block;
+  margin: 12px 0;
+  background: #111;     /* contrast */
+  color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  position: relative;
+  z-index: 25;          /* above hero / sidebar */
+}
+
+
+.hero { position: relative; z-index: 1; }
+
+
+:root { --sidebar-w: 64px; } /* adjust to your sidebar width */
+@media (min-width: 769px) {
+  body { padding-left: var(--sidebar-w); } /* or instead lower sidebar z-index */
+  /* .sidebar { z-index: 5; }  content sits above at z 20+ */
+}
+
+
 
 .btn bth-msg{
   background-color: #111;
+}
+ 
+/*Move task 8 to the right*/
+
+:root { --sidebar-w: 64px; }
+
+.copy-row,
+#copyText1,
+#copyText2,
+.copy-section {   /* use the container class wrapping your copy rows */
+  margin-left: var(--sidebar-w);
 }

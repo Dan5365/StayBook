@@ -1,15 +1,18 @@
 // jquery-part1.js
-
+// Task 0: jQuery ready check
 $(function () {
   console.log("jQuery is ready! (Dining page)");
 
+  
   var items = [];
+  
   $('.amenities#menu .card h3').each(function () {
     items.push($(this).text().trim());
   });
 
   // --- Helpers ---
 
+  
   function showSuggestions(q) {
     var $list = $('#menuSuggestions').empty();
     if (!q) { $list.hide(); return; }
@@ -29,6 +32,7 @@ $(function () {
     }
   }
 
+  
   function clearHighlights() {
     $('.amenities#menu .card').each(function () {
       var $h3 = $(this).find('h3');
@@ -38,8 +42,10 @@ $(function () {
     });
   }
 
+  
   function highlight(q) {
     if (!q) return;
+    
     var safe = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     var regex = new RegExp('(' + safe + ')', 'ig');
 
@@ -54,26 +60,32 @@ $(function () {
 
   // --- Events ---
 
+  // Task 1: Real-time search & live filter (keyup/input)
   $('#menuSearchInput').on('keyup input', function () {
     var q = $(this).val().trim().toLowerCase();
 
+    
     $('.amenities#menu .card').each(function () {
       var text = $(this).text().toLowerCase();
       $(this).toggle(text.indexOf(q) !== -1);
     });
 
+    // Task 2: Autocomplete suggestions
     showSuggestions(q);
 
+    // Task 3: Search highlighting
     clearHighlights();
     if (q) highlight(q);
   });
 
+  
   $('#menuSuggestions').on('click', 'li', function () {
     var text = $(this).text();
     $('#menuSearchInput').val(text).trigger('input');
     $('#menuSuggestions').hide();
   });
 
+  
   $(document).on('click', function (e) {
     if (!$(e.target).closest('#menu-search').length) {
       $('#menuSuggestions').hide();

@@ -16,7 +16,7 @@ $(function () {
     $('#scrollProgress .bar').css('width', percent + '%');
   }
   $(window).on('scroll resize', updateScrollProgress);
-  updateScrollProgress(); // initial
+  updateScrollProgress(); 
 
   /* =========================
      Task 5: Animated Number Counter
@@ -40,7 +40,7 @@ $(function () {
     $('.stat .num').each(function () {
       var $num = $(this);
       var target = parseInt($num.data('target'), 10) || 0;
-      var duration = 1200;         
+      var duration = 1200;          
       var steps = 40;                 
       var stepTime = Math.floor(duration / steps);
       var current = 0;
@@ -65,7 +65,7 @@ $(function () {
      - Add class .js-simulate-submit to any form you want this on
      ========================= */
   $('form.js-simulate-submit').on('submit', function (e) {
-    e.preventDefault(); 
+    e.preventDefault(); // simulate server call
     var $form = $(this);
     var $btn = $form.find('button[type="submit"], input[type="submit"]');
     var $spinner = $btn.find('.spinner');
@@ -81,7 +81,9 @@ $(function () {
       if ($spinner.length) $spinner.addClass('hidden');
       if ($text.length) $text.text('Submit');
 
-     
+      
+
+      
       var $note = $('<div class="mini-toast">Form submitted (simulated)</div>');
       $('body').append($note);
       setTimeout(function () { $note.fadeOut(300, function(){ $(this).remove(); }); }, 1000);

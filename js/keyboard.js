@@ -1,7 +1,9 @@
 document.addEventListener("keydown", function (e) {
+  // stop working while typing in inputs or textareas
   const tag = document.activeElement.tagName.toLowerCase();
   if (tag === "input" || tag === "textarea" || tag === "select") return;
 
+  // get navbar links (change selector if navbar class is different)
   var links = document.querySelectorAll(".navbar__buttons a, nav a, .menu a");
 
   if (e.key === "1" && links[0]) links[0].click();
