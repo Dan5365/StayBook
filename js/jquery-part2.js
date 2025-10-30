@@ -40,8 +40,8 @@ $(function () {
     $('.stat .num').each(function () {
       var $num = $(this);
       var target = parseInt($num.data('target'), 10) || 0;
-      var duration = 1200;           // 1.2s
-      var steps = 40;                 // ~25ms per step
+      var duration = 1200;         
+      var steps = 40;                 
       var stepTime = Math.floor(duration / steps);
       var current = 0;
       var increment = Math.ceil(target / steps);
@@ -58,14 +58,14 @@ $(function () {
   }
 
   $(window).on('scroll resize', startCounters);
-  startCounters(); // try once on load
+  startCounters(); 
 
   /* =========================
      Task 6: Loading spinner on Submit
      - Add class .js-simulate-submit to any form you want this on
      ========================= */
   $('form.js-simulate-submit').on('submit', function (e) {
-    e.preventDefault(); // simulate server call
+    e.preventDefault(); 
     var $form = $(this);
     var $btn = $form.find('button[type="submit"], input[type="submit"]');
     var $spinner = $btn.find('.spinner');
@@ -76,15 +76,15 @@ $(function () {
     if ($text.length) $text.text('Please wait...');
 
     setTimeout(function () {
-      // restore button to normal
+      
       $btn.prop('disabled', false).removeClass('is-loading');
       if ($spinner.length) $spinner.addClass('hidden');
       if ($text.length) $text.text('Submit');
 
-      // show a tiny success note (optional)
+     
       var $note = $('<div class="mini-toast">Form submitted (simulated)</div>');
       $('body').append($note);
       setTimeout(function () { $note.fadeOut(300, function(){ $(this).remove(); }); }, 1000);
-    }, 1200); // simulate ~1.2s delay
+    }, 1200); 
   });
 });
