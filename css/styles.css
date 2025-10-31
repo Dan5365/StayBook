@@ -12,6 +12,21 @@
     color: var(--text);
     line-height: 1.6;
     transition: background 0.5s ease, color 0.5s ease;
+    /* light theme variables */
+    --bg: #ffffff;
+    --text: #111111;
+    --card: #285fea;
+    --link: #1a73e8;
+    --navbar-bg: rgb(56, 114, 240);
+    --navbar-text: #ffffff;
+    --footer-bg: rgb(92, 123, 188);
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #333333;
+    --sidebar-hover: #f0f4ff;
+    --sidebar-accent: #0066ff;
+    --sidebar-border: #e0e0e0;
+    --panel-bg: #ffffff;
+    --sidebar-w: 70px;
   }
 
 
@@ -28,7 +43,7 @@
     scroll-behavior: smooth;
   }
 
-  /* === NAVBAR === */
+  /* NAVBAR */
 
 
   .grid-layout {
@@ -38,7 +53,7 @@
       "sidebar main"
       "footer  footer";
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: 70px 1fr;
     min-height: 100vh;
     background: transparent;
   }
@@ -49,6 +64,7 @@
 
   .navbar {
     grid-area: navbar;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -57,8 +73,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
-    background: rgb(56, 114, 240);
-    color: white;
+    background: var(--navbar-bg);
+    color: var(--navbar-text);
     z-index: 1000;
   }
 
@@ -155,16 +171,20 @@
 
 
 
-  /* === SIDEBAR === */
+  /* SIDEBAR */
   .sidebar {
     grid-area: sidebar;
     width: 70px;
-    height: 100%;
-    background: #fff;
-    border-right: 1px solid #e0e0e0;
+    top: 85px;
+     height: calc(100vh - 85px);
+    position: fixed;
+    /* top: 85px;  */
+    left: 0;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
     transition: width .3s;
     overflow: hidden;
-    z-index: 3;
+    z-index: 999;
   }
 
   .sidebar:hover {
@@ -176,13 +196,13 @@
     align-items: center;
     padding: 12px 15px;
     white-space: nowrap;
-    color: #333;
+    color: var(--sidebar-text);
     transition: .3s;
   }
 
   .sidebar a:hover {
-    background: #f0f4ff;
-    color: #0066ff;
+    background: var(--sidebar-hover);
+    color: var(--sidebar-accent);
   }
 
   .sidebar ion-icon {
@@ -227,7 +247,7 @@
     opacity: 1;
   }
 
-  /* === СЕКЦИИ === */
+  /* SECTIONS */
 
   .hero {
     background: url("https://digital.ihg.com/is/image/ihg/intercontinental-tegucigalpa-6071105521-2x1") center/cover;
@@ -273,6 +293,12 @@
     font-size: larger;
   }
 
+  /* FAQ title alignment */
+  .faq h2 {
+    text-align: center;
+    margin: 20px auto;
+  }
+
   .about h2 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -305,7 +331,7 @@
   }
 
   .room {
-    background: #fff;
+    background: var(--panel-bg);
     padding: 10px;
     border-radius: 10px;
     transition: .3s;
@@ -329,7 +355,7 @@
     max-width: 600px;
     margin: 40px auto;
     padding: 50px 20px;
-    background: #fff;
+    background: var(--panel-bg);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
   }
@@ -369,7 +395,7 @@
   .contacts {
     text-align: center;
     padding: 50px 20px;
-    background: #fff;
+    background: var(--panel-bg);
   }
 
   .contacts h2 {
@@ -447,7 +473,7 @@
   /* Footer */
   footer {
     grid-area: footer;
-    background: rgb(92, 123, 188);
+    background: var(--footer-bg);
     color: white;
     text-align: center;
     padding: 20px;
@@ -512,10 +538,7 @@
 
 
 
-/*16.10.25*/
-
-
-  /* --- form errors --- */
+/* form errors */
 .error-msg { color: #e53935; font-size: 12px; margin-top: 4px; display: block; }
 input.invalid, select.invalid { border: 1px solid #e53935 !important; outline: none; }
 
@@ -527,7 +550,7 @@ input.invalid, select.invalid { border: 1px solid #e53935 !important; outline: n
 .accordion__content p { margin: 14px 0 16px; }
 
 
-/* ===== POPUP STYLES (ISOLATED) ===== */
+/* Popup */
 .popup-demo {
   display: flex;
   justify-content: center;
@@ -648,7 +671,7 @@ input.invalid, select.invalid { border: 1px solid #e53935 !important; outline: n
 
 .grid-layout {
   min-height: 100%;
-  display: grid; /* если у тебя сетка */
+  display: grid;
 }
 
 #datetime-container {
@@ -661,32 +684,48 @@ input.invalid, select.invalid { border: 1px solid #e53935 !important; outline: n
 
 
 
-/* As7: Day and night theme */
-
+/* Theme */
 :root {
   --bg: #ffffff;
   --text: #111111;
   --card: #285fea;
   --link: #1a73e8;
+  --navbar-bg: rgb(56, 114, 240);
+  --navbar-text: #ffffff;
+  --footer-bg: rgb(92, 123, 188);
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #333333;
+  --sidebar-hover: #f0f4ff;
+  --sidebar-accent: #0066ff;
+  --sidebar-border: #e0e0e0;
+  --panel-bg: #ffffff;
 }
 
 .theme-night {
-  --bg: #757575;
-
-  --card: #1a1b1e;
-  --link: #8ab4f8;
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1f2937;
+  --link: #93c5fd;
+  --navbar-bg: #111827;
+  --navbar-text: #e5e7eb;
+  --footer-bg: #111827;
+  --sidebar-bg: #0b1220;
+  --sidebar-text: #e5e7eb;
+  --sidebar-hover: rgba(255,255,255,0.06);
+  --sidebar-accent: #93c5fd;
+  --sidebar-border: rgba(255,255,255,0.10);
+  --panel-bg: #111827;
 }
 
-/* Use the vars across the site */
+/* Theme usage */
 body { background: var(--bg); color: var(--text); }
 a { color: var(--link); }
-.header, .footer, .card, .section, .navbar { background: var(--card); }
-
+.header, .card, .section { background: var(--card); }
 /* transitions for nicer switch */
 body, .header, .footer, .card, .section, .navbar {
   transition: background 0.2s ease, color 0.2s ease;
 }
-
+:root {  }
 
 /*Rating styling*/
 
@@ -720,7 +759,6 @@ body, .header, .footer, .card, .section, .navbar {
   transition: width 0.1s linear;
 }
 
-body { padding-top: 6px; } /* keeps content from hiding under the bar */
 
 
 /* ===== Part 2: Task 5 – Counter ===== */
@@ -734,9 +772,18 @@ body { padding-top: 6px; } /* keeps content from hiding under the bar */
 
 /* ===== Task 6: Submit Spinner ===== */
 .contact-form { max-width: 400px; margin: 40px auto; text-align: center; }
+.contact-form {
+  background: var(--panel-bg);
+  border: 1px solid var(--sidebar-border);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  padding: 20px 16px;
+}
+.contact-form h2 { margin-bottom: 10px; }
 .contact-form input, .contact-form textarea {
-  width: 100%; margin-bottom: 10px; padding: 10px;
-  border: 1px solid #ccc; border-radius: 6px;
+  width: 100%; margin-bottom: 12px; padding: 12px;
+  border: 1px solid var(--sidebar-border); border-radius: 8px;
+  background: transparent; color: var(--text);
 }
 .btn {
   position: relative; display: inline-flex; align-items: center; justify-content: center;
@@ -767,25 +814,67 @@ body { padding-top: 6px; } /* keeps content from hiding under the bar */
 /* make the demo button visible and clickable */
 .toast-demo {
   display: inline-block;
-  margin: 12px 0;
-  background: #111;     /* contrast */
-  color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  margin: 12px 8px 12px 0;
+  background: var(--navbar-bg);
+  color: var(--navbar-text);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
   padding: 10px 14px;
   position: relative;
   z-index: 25;          /* above hero / sidebar */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
+.toast-demo:hover { filter: brightness(1.05); }
+
+/* Celebrate button */
+#celebrateBtn {
+  margin-left: 8px;
+  background: linear-gradient(135deg, var(--navbar-bg), #3b82f6);
+  color: var(--navbar-text);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+#celebrateBtn:hover { filter: brightness(1.06); }
+
+/* Copy rows styling */
+.copy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 420px;
+  background: var(--panel-bg);
+  border: 1px solid var(--sidebar-border);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+.copy-row code,
+.copy-row span {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 600;
+  color: var(--text);
+}
+.copy-btn {
+  background: var(--navbar-bg);
+  color: var(--navbar-text);
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.copy-btn:hover { filter: brightness(1.05); }
 
 
 .hero { position: relative; z-index: 1; }
 
 
-:root { --sidebar-w: 64px; } /* adjust to your sidebar width */
-@media (min-width: 769px) {
-  body { padding-left: var(--sidebar-w); } /* or instead lower sidebar z-index */
-  /* .sidebar { z-index: 5; }  content sits above at z 20+ */
-}
+:root { --sidebar-w: 70px; }
+
 
 
 
@@ -795,7 +884,7 @@ body { padding-top: 6px; } /* keeps content from hiding under the bar */
  
 /*Move task 8 to the right*/
 
-:root { --sidebar-w: 64px; }
+:root { --sidebar-w: 70px; }
 
 .copy-row,
 #copyText1,

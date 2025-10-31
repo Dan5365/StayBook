@@ -1,4 +1,3 @@
-// jquery-part3.js
 $(function () {
   console.log("jQuery Part 3 ready!");
 
@@ -41,7 +40,6 @@ $(function () {
      Demo button (делегирование — работает для динамически добавленных элементов)
      ========================= */
   $(document).on('click', '#demoToast', function () {
-    // если элемент есть и клик обработан — показываем тост
     showToast("This is a sample toast notification!");
   });
 
@@ -76,7 +74,7 @@ $(function () {
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(onCopySuccess).catch(function () {
-        // fallback to execCommand if clipboard API rejected
+
         fallbackCopy(text, onCopySuccess, onCopyFail);
       });
     } else {
@@ -110,16 +108,15 @@ $(function () {
     var bottom = top + $el.outerHeight();
     var vTop = $(window).scrollTop();
     var vBottom = vTop + $(window).height();
-    return bottom > vTop - 50 && top < vBottom + 50; // small pre-load margin
+    return bottom > vTop - 50 && top < vBottom + 50; 
   }
 
   function loadVisibleImages() {
     $("img[data-src]").each(function () {
       var $img = $(this);
-      if ($img.attr("src")) return; // already loaded
+      if ($img.attr("src")) return;
       if (inView($img)) {
         var real = $img.data("src");
-        // простая проверка
         if (real) {
           $img.attr("src", real).addClass("loaded");
         }
@@ -127,12 +124,11 @@ $(function () {
     });
   }
 
-  // throttle простая: не навешиваем слишком часто
   var lazyTimer = null;
   $(window).on("scroll resize", function () {
     if (lazyTimer) clearTimeout(lazyTimer);
     lazyTimer = setTimeout(loadVisibleImages, 100);
   });
 
-  loadVisibleImages(); // initial run
+  loadVisibleImages(); 
 });

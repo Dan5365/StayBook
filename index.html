@@ -23,8 +23,7 @@
 
 <body>
 
-    <!-- Toast container -->
-  <div id="toastWrap" aria-live="polite"></div>
+
 
 
     <!-- Scroll Progress Bar (Task 4) -->
@@ -328,6 +327,39 @@
     <script src="js/theme.js"></script>
     <script src="js/jquery-part2.js"></script>
     <script src="js/jquery-part3.js"></script>
+
+    <!-- Special: Confetti Celebration Button -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+      (function() {
+        var toolsSection = document.querySelector('.tools');
+        if (!toolsSection) return;
+        var celebrateBtn = document.createElement('button');
+        celebrateBtn.id = 'celebrateBtn';
+        celebrateBtn.className = 'btn';
+        celebrateBtn.textContent = '🎉 Celebrate!';
+        toolsSection.appendChild(celebrateBtn);
+
+        function shootConfetti() {
+          if (!window.confetti) return;
+          var durationMs = 1200;
+          var animationEnd = Date.now() + durationMs;
+          var defaults = { startVelocity: 35, spread: 360, ticks: 60, zIndex: 9999 };
+
+          function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+
+          var interval = setInterval(function() {
+            var timeLeft = animationEnd - Date.now();
+            if (timeLeft <= 0) { return clearInterval(interval); }
+            var particleCount = Math.round(80 * (timeLeft / durationMs));
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+          }, 100);
+        }
+
+        celebrateBtn.addEventListener('click', shootConfetti);
+      })();
+    </script>
 
 
   </div>
