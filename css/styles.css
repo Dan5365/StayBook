@@ -399,25 +399,30 @@
   }
 
   .contacts h2 {
+    
     font-size: 2rem;
     margin-bottom: 20px;
   }
 
   .contacts p {
+    color: white;
     max-width: 600px;
     margin: 0 auto 30px;
-    color: #555;
+   
   }
 
   .contacts-info {
+     
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     margin-bottom: 30px;
+   
   }
 
   .contact-item {
+     
     flex: 1 1 250px;
     width: 250px;
     background: #f4f6fa;
@@ -436,7 +441,12 @@
     margin-bottom: 10px;
     color: rgb(56, 114, 240);
   }
-
+.contact-item p {
+   color: black;
+  }
+  .contact-item a {
+   color: black;
+  }
   .contact-item ion-icon {
     font-size: 40px;
     color: rgb(56, 114, 240);
@@ -765,7 +775,7 @@ body, .header, .footer, .card, .section, .navbar {
 .stats { max-width: 1000px; margin: 40px auto; padding: 0 16px; }
 .stats h2 { margin-bottom: 12px; }
 .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.stat { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 16px; text-align: center; }
+.stat { border: 1px solid #eee; border-radius: 8px; padding: 16px; text-align: center; }
 .stat .num { font-size: 2rem; font-weight: 700; }
 @media (max-width: 640px) { .stats-grid { grid-template-columns: 1fr; } }
 
@@ -868,6 +878,33 @@ body, .header, .footer, .card, .section, .navbar {
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 .copy-btn:hover { filter: brightness(1.05); }
+
+.wrapper {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  margin-right: 70px;      
+}
+
+.copy-tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 400px;
+  justify-content: center; 
+}
+
+.copy-row, .tools {
+  display: flex;
+  flex: 1 1 45%; 
+  justify-content: space-between;
+  min-width: 150px;
+  margin-bottom: 10px;
+}
+
+.copy-btn, .btn {
+  flex-shrink: 0;
+}
 
 
 .hero { position: relative; z-index: 1; }
