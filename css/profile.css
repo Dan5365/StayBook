@@ -112,3 +112,33 @@
 #stars { display: inline-flex; gap: 8px; margin: 6px 0; }
 #ratingLabel, #quoteBox { margin-top: 8px; }
 .profile-greeting input { margin-right: 8px; }
+
+.profile-wrap{
+  margin-top: 100px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+.profile-wrap input{
+  font-size: 20px;
+  border-radius: 25px;
+  height: 30px;
+}
+.profile-wrap {
+  font-size: 20px;
+  border: 1px solid;
+  border-radius: 25px;
+}
+
+.save-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #1e40af;
+}
