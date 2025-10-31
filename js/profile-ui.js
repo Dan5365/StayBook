@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // ==== Greeting (name input) ====
-  var nameInput = document.getElementById("nameInput");
-  var saveNameBtn = document.getElementById("saveNameBtn");
-  var greetingText = document.getElementById("greetingText");
+  let nameInput = document.getElementById("nameInput");
+  let saveNameBtn = document.getElementById("saveNameBtn");
+  let greetingText = document.getElementById("greetingText");
 
-  // load saved name (optional but nice)
-  var savedName = localStorage.getItem("profileName");
+
+  let savedName = localStorage.getItem("profileName");
   if (savedName) {
     greetingText.textContent = "Hello, " + savedName + "!";
     if (nameInput) nameInput.value = savedName;
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (saveNameBtn) {
     saveNameBtn.addEventListener("click", function () {
-      var name = (nameInput && nameInput.value) ? nameInput.value.trim() : "";
+      let name = (nameInput && nameInput.value) ? nameInput.value.trim() : "";
       if (name.length > 0) {
         greetingText.textContent = "Hello, " + name + "!";
         localStorage.setItem("profileName", name);
@@ -21,54 +21,54 @@ document.addEventListener("DOMContentLoaded", function () {
         greetingText.textContent = "Hello!";
         localStorage.removeItem("profileName");
       }
-      // small click sound on save
-      var snd = document.getElementById("clickSound");
+   
+      let snd = document.getElementById("clickSound");
       if (snd) { snd.currentTime = 0; snd.play(); }
     });
   }
 
   // ==== Rating + Sound + Quote ====
-  var stars = document.querySelectorAll("#stars .star");
-  var ratingLabel = document.getElementById("ratingLabel");
-  var quoteBox = document.getElementById("quoteBox");
+  let stars = document.querySelectorAll("#stars .star");
+  let ratingLabel = document.getElementById("ratingLabel");
+  let quoteBox = document.getElementById("quoteBox");
 
-  // simple quote pools
-  var quotesBad = [
+  
+  let quotesBad = [
     "Tough day? Small steps count.",
     "It’s okay to pause and breathe.",
     "Every dip is temporary."
   ];
-  var quotesMid = [
+  let quotesMid = [
     "Steady is progress.",
     "One task at a time.",
     "Keep going, you’re doing fine."
   ];
-  var quotesGood = [
+  let quotesGood = [
     "Let’s go! You’ve got this.",
     "Great energy — use it well!",
     "Momentum is your friend."
   ];
 
   function pickRandom(arr) {
-    var i = Math.floor(Math.random() * arr.length);
+    let i = Math.floor(Math.random() * arr.length);
     return arr[i];
   }
 
   function setRating(value) {
-    // highlight stars
-    for (var i = 0; i < stars.length; i++) {
-      var v = parseInt(stars[i].getAttribute("data-value"), 10);
+  
+    for (let i = 0; i < stars.length; i++) {
+      let v = parseInt(stars[i].getAttribute("data-value"), 10);
       if (v <= value) {
         stars[i].classList.add("active");
       } else {
         stars[i].classList.remove("active");
       }
     }
-    // label
+    
     if (ratingLabel) ratingLabel.textContent = "Your rating: " + value + "/5";
 
-    // pick quote by mood
-    var quote = "";
+   
+    let quote = "";
     if (value <= 2) {
       quote = pickRandom(quotesBad);
     } else if (value === 3) {
@@ -78,15 +78,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (quoteBox) quoteBox.textContent = quote;
 
-    // play sound
-    var snd = document.getElementById("clickSound");
+
+    let snd = document.getElementById("clickSound");
     if (snd) { snd.currentTime = 0; snd.play(); }
   }
 
-  // attach click handlers
-  for (var j = 0; j < stars.length; j++) {
+ 
+  for (let j = 0; j < stars.length; j++) {
     stars[j].addEventListener("click", function () {
-      var val = parseInt(this.getAttribute("data-value"), 10);
+      let val = parseInt(this.getAttribute("data-value"), 10);
       setRating(val);
     });
   }

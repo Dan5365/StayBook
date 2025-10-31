@@ -9,7 +9,7 @@ $(function () {
     var $wrap = $("#toastWrap");
     if (!$wrap.length) {
       $wrap = $('<div id="toastWrap" aria-live="polite" role="status"></div>').appendTo("body");
-      // небольшой базовый стиль если нет CSS (можно убрать)
+
       $wrap.css({
         position: "fixed",
         right: "16px",

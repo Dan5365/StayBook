@@ -1,5 +1,5 @@
 // jquery-part1.js
-// Task 0: jQuery ready check
+// Task 0: jQuery ready check, menu search
 $(function () {
   console.log("jQuery is ready! (Dining page)");
 
