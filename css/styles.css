@@ -496,7 +496,6 @@
     .navbar {
       flex-direction: column;
       height: auto;
-      padding: 10px;
     }
 
     .navbar__logo img {
@@ -878,6 +877,11 @@ body, .header, .footer, .card, .section, .navbar {
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 .copy-btn:hover { filter: brightness(1.05); }
+
+.btn-cont{
+  background-color: #0066ff;
+  border-radius: 10px;
+}
 
 .wrapper {
   display: flex;

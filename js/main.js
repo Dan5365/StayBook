@@ -101,13 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
     header.addEventListener("click", () => {
       const isOpen = item.classList.contains("is-open");
 
-      // закрыть все
+      
       items.forEach(i => {
         i.classList.remove("is-open");
         i.querySelector(".accordion__content").style.maxHeight = "0px";
       });
 
-      // открыть текущий, если он был закрыт
+  
       if (!isOpen) {
         item.classList.add("is-open");
         content.style.maxHeight = content.scrollHeight + "px";
