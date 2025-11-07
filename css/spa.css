@@ -179,3 +179,150 @@
 .gallery-item:hover figcaption {
   opacity: 1;
 }
+
+
+
+
+/* ===== Mobile-safe base ===== */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; min-width: 0; } /* lets inputs shrink */
+img, video { max-width: 100%; height: auto; }
+
+/* ===== Card wrapper ===== */
+.form-card {
+  max-width: 720px;               /* centers and caps width on desktop */
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  padding: clamp(12px, 3vw, 24px); /* responsive padding */
+  overflow: hidden;                /* prevents children from “sticking out” */
+}
+
+/* Headings & rows */
+.form-card h2,
+.form-card h3 { margin: 0 0 .75rem; line-height: 1.2; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 columns on wider screens */
+  gap: 12px;
+}
+
+/* On small screens go to 1 column */
+@media (max-width: 640px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+.form-card select{
+    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* ===== Inputs/selects/buttons inside the card ===== */
+.form-card input,
+.form-card select,
+.form-card textarea,
+.form-card button {
+      
+  min-width: 0;           /* critical inside grid/flex to stop overflow */
+  display: block;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font: inherit;
+  line-height: 1.2;
+}
+
+/* Date/time fields sometimes render taller—normalize height */
+.form-card input[type="date"],
+.form-card input[type="time"],
+.form-card input[type="datetime-local"] {
+  height: 44px;
+}
+
+/* Prevent long placeholders/text from breaking layout */
+.form-card input,
+.form-card textarea {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Submit button style */
+.form-card button[type="submit"] {
+  cursor: pointer;
+  border: none;
+  background: #2563eb;   /* change to your brand color */
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Keep buttons side-by-side on wide screens */
+.button-row {
+  display: flex;
+  gap: 12px;
+}
+.button-row > * { flex: 1 1 0; }
+
+/* On small screens stack the buttons */
+@media (max-width: 640px) {
+  .button-row { flex-direction: column; }
+}
+
+/* ===== Utility: kill legacy fixed widths that cause overflow ===== */
+/* If your old CSS set fixed widths like 400px/500px, this rule wins because it comes later */
+.form-card [style*="width:"],
+.form-card .has-fixed-width {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Booking form fix */
+.booking-form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  box-sizing: border-box;
+}
+
+.booking-form .field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.booking-form select,
+.booking-form input,
+.booking-form button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font: inherit;
+}
+
+/* make buttons responsive too */
+.booking-form button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background-color: #1e4fd3;
+}
+
+/* ensure form adapts well on phones */
+@media (max-width: 600px) {
+  .booking-form {
+    padding: 15px;
+  }
+}
+

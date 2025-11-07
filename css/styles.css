@@ -933,3 +933,9 @@ body, .header, .footer, .card, .section, .navbar {
 .copy-section {   /* use the container class wrapping your copy rows */
   margin-left: var(--sidebar-w);
 }
+
+
+@media (max-width: 640px) {
+  .header, .navbar { padding: 8px 12px; }
+  .navbar a { font-size: 14px; }
+}
