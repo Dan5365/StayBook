@@ -553,6 +553,9 @@
 
   /* === АДАПТИВ ДЛЯ ТЕЛЕФОНА === */
   @media (max-width: 768px) {
+    .navbar__logo{
+      display: none;
+    }
     .grid-layout {
       grid-template-columns: 0 1fr;
     }
@@ -719,6 +722,9 @@
   }
 
   @media (max-width: 480px) {
+    .navbar__logo{
+      display: none;
+    }
     .navbar {
       padding: 8px 10px;
     }
