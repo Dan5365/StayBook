@@ -15,7 +15,6 @@
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!-- jQuery (CDN) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
@@ -66,6 +65,15 @@
           </div>
 
         </div>
+
+        <div class="theme-toggle-container">
+          <button class="theme-btn" id="theme-day" title="Light Mode">
+            <ion-icon name="sunny-outline"></ion-icon>
+          </button>
+          <button class="theme-btn" id="theme-night" title="Dark Mode">
+            <ion-icon name="moon-outline"></ion-icon>
+          </button>
+        </div>
      
       </nav>
 
@@ -112,10 +120,6 @@
         <p>Comfortable rooms and the best service for your holiday.</p>
         <a href="#about"><button type="button" class="cta-btn">Book now</button></a>
       </section>
-
-
-
-
 
 
 
@@ -180,14 +184,17 @@
       <section class="booking-form" id="book">
         <h2>Book a room</h2>
         <form id="booking-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Type your name">
+          <label for="name">Name *</label>
+          <input type="text" id="name" placeholder="Type your name" required>
 
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Type an email">
+          <label for="email">Email *</label>
+          <input type="email" id="email" placeholder="Type an email" required>
 
-          <label for="date">Check-in date</label>
-          <input type="date" id="date">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" placeholder="+7 (700) 123-45-67" required>
+
+          <label for="date">Check-in date *</label>
+          <input type="date" id="date" required>
 
           <button type="submit" class="cta-btn">Send</button>
         </form>
@@ -300,9 +307,7 @@
       <button class="copy-btn" data-target="#copyText2">Copy</button>
     </div>
 
-    <section class="tools">
-      <button id="demoToast" class="btn toast-demo">Show Toast</button>
-    </section>
+   
   </div>
 </div>
 

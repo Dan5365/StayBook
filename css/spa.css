@@ -11,16 +11,26 @@
 
 /* Секции */
 .amenities {
-  color: black;
+  color: var(--text);
   padding: 50px 20px;
   text-align: center;
+  background: var(--bg);
 }
 
 .amenities h2 {
   margin-top: 100px;
   font-size: 2rem;
-  margin-bottom: 20px;
-  color: rgb(56, 114, 240);
+  margin-bottom: 30px;
+  color: var(--navbar-bg);
+  font-weight: 600;
+}
+
+.amenities h3 {
+  color: var(--text);
+}
+
+.amenities p {
+  color: var(--text);
 }
 
 .grid {
@@ -31,7 +41,7 @@
 }
 
 .flex {
-  color: black;
+  color: var(--text);
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -44,11 +54,24 @@
   max-width: 350px;
   flex-direction: column;
   justify-content: space-between;
-  background: #fff;
+  background: var(--panel-bg);
+  color: var(--text);
   border-radius: 12px;
-  padding: 15px;
+  padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--sidebar-border);
+}
+
+.flex .card h3,
+.flex .card p {
+  color: var(--text);
+}
+
+.flex .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .item {
@@ -72,10 +95,23 @@
 }
 
 .card {
-  background: #fff;
+  background: var(--panel-bg);
+  color: var(--text);
   border-radius: 12px;
-  padding: 15px;
+  padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--sidebar-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3,
+.card p {
+  color: var(--text);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .img-resp {
@@ -104,6 +140,11 @@
   gap: 15px;
   max-width: 500px;
   margin: 0 auto;
+  background: var(--panel-bg);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--sidebar-border);
 }
 
 .field {
@@ -114,28 +155,61 @@
 
 .field span {
   margin-bottom: 5px;
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .booking-form input,
 .booking-form select {
-  padding: 10px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
+  padding: 12px;
+  border: 2px solid var(--sidebar-border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.booking-form input::placeholder {
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: none;
+  border-color: var(--navbar-bg);
+  box-shadow: 0 0 0 3px rgba(56, 114, 240, 0.1);
 }
 
 .booking-form button {
-  padding: 12px;
-  background: rgb(56, 114, 240);
+  padding: 14px;
+  background: linear-gradient(135deg, var(--navbar-bg), #3b82f6);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
 .booking-form button:hover {
-  background: #315fcc;
+  background: linear-gradient(135deg, #315fcc, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(56, 114, 240, 0.3);
+}
+
+.success-msg {
+  color: #4caf50;
+  padding: 15px;
+  margin-top: 15px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid rgba(76, 175, 80, 0.3);
 }
 
 
@@ -144,10 +218,32 @@
 .spa-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* 3 columns */
+
   gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 768px) {
+  .spa-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 15px;
+  }
+
+  .gallery-item img {
+    height: 180px;
+  }
+}
+
+/* Small mobile: 1 column */
+@media (max-width: 480px) {
+  .spa-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
 
 .gallery-item {
@@ -184,48 +280,74 @@
 
 
 /* ===== Mobile-safe base ===== */
-html { box-sizing: border-box; }
-*, *::before, *::after { box-sizing: inherit; min-width: 0; } /* lets inputs shrink */
-img, video { max-width: 100%; height: auto; }
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  min-width: 0;
+}
+
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
 
 /* ===== Card wrapper ===== */
 .form-card {
-  max-width: 720px;               /* centers and caps width on desktop */
+  max-width: 720px;
+ 
   width: 100%;
   margin: 0 auto;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-  padding: clamp(12px, 3vw, 24px); /* responsive padding */
-  overflow: hidden;                /* prevents children from “sticking out” */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+  padding: clamp(12px, 3vw, 24px);
+  
+  overflow: hidden;
+ 
 }
 
 /* Headings & rows */
 .form-card h2,
-.form-card h3 { margin: 0 0 .75rem; line-height: 1.2; }
+.form-card h3 {
+  margin: 0 0 .75rem;
+  line-height: 1.2;
+}
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;  /* 2 columns on wider screens */
+  grid-template-columns: 1fr 1fr;
+  /* 2 columns on wider screens */
   gap: 12px;
 }
 
 /* On small screens go to 1 column */
 @media (max-width: 640px) {
-  .form-grid { grid-template-columns: 1fr; }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
 }
-.form-card select{
-    overflow: hidden;
+
+.form-card select {
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 /* ===== Inputs/selects/buttons inside the card ===== */
 .form-card input,
 .form-card select,
 .form-card textarea,
 .form-card button {
-      
-  min-width: 0;           /* critical inside grid/flex to stop overflow */
+
+  min-width: 0;
+  /* critical inside grid/flex to stop overflow */
   display: block;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -253,7 +375,8 @@ img, video { max-width: 100%; height: auto; }
 .form-card button[type="submit"] {
   cursor: pointer;
   border: none;
-  background: #2563eb;   /* change to your brand color */
+  background: #2563eb;
+  /* change to your brand color */
   color: #fff;
   font-weight: 600;
 }
@@ -263,11 +386,16 @@ img, video { max-width: 100%; height: auto; }
   display: flex;
   gap: 12px;
 }
-.button-row > * { flex: 1 1 0; }
+
+.button-row>* {
+  flex: 1 1 0;
+}
 
 /* On small screens stack the buttons */
 @media (max-width: 640px) {
-  .button-row { flex-direction: column; }
+  .button-row {
+    flex-direction: column;
+  }
 }
 
 /* ===== Utility: kill legacy fixed widths that cause overflow ===== */
@@ -285,7 +413,7 @@ img, video { max-width: 100%; height: auto; }
   margin: 0 auto;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
   box-sizing: border-box;
 }
 
@@ -322,7 +450,15 @@ img, video { max-width: 100%; height: auto; }
 /* ensure form adapts well on phones */
 @media (max-width: 600px) {
   .booking-form {
-    padding: 15px;
+    padding: 20px 15px;
+  }
+
+  .amenities {
+    padding: 30px 15px;
+  }
+
+  .amenities h2 {
+    margin-top: 80px;
+    font-size: 1.6rem;
   }
 }
-

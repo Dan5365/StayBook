@@ -84,6 +84,69 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".error-msg").forEach((el) => el.remove());
     document.querySelectorAll(".invalid").forEach((el) => el.classList.remove("invalid"));
   }
+
+  // === Booking Form Validation ===
+  const bookingForm = document.querySelector("#booking-form");
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      clearErrors();
+
+      const name = document.querySelector("#name");
+      const email = document.querySelector("#email");
+      const phone = document.querySelector("#phone");
+      const date = document.querySelector("#date");
+
+      let valid = true;
+
+      // Name validation
+      if (name.value.trim().length < 2) {
+        showError(name, "Name must be at least 2 characters.");
+        valid = false;
+      }
+
+      // Email validation
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        showError(email, "Enter a valid email address.");
+        valid = false;
+      }
+
+      // Phone validation (supports various formats)
+      const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
+      const phoneClean = phone.value.replace(/[\s\-\(\)]/g, '');
+      if (!phoneRegex.test(phoneClean) || phoneClean.length < 10) {
+        showError(phone, "Enter a valid phone number (e.g., +7 700 123 45 67).");
+        valid = false;
+      }
+
+      // Date validation
+      const selectedDate = new Date(date.value);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      if (!date.value || selectedDate < today) {
+        showError(date, "Please select a valid future date.");
+        valid = false;
+      }
+
+      if (valid) {
+        // Save booking to localStorage
+        const booking = {
+          name: name.value.trim(),
+          email: email.value.trim(),
+          phone: phone.value.trim(),
+          date: date.value,
+          timestamp: new Date().toISOString()
+        };
+        
+        let bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+        bookings.push(booking);
+        localStorage.setItem('bookings', JSON.stringify(bookings));
+        
+        alert("Booking submitted successfully! We'll contact you soon.");
+        bookingForm.reset();
+      }
+    });
+  }
 });
 
 

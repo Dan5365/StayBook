@@ -1,17 +1,17 @@
 @import url("styles.css");
-
-
-
 .amenities {
- 
-  padding: 60px 70px;
+  padding: 60px 20px;
   text-align: center;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .amenities h2 {
-  margin-top: 50px;
+  margin-top: 100px;
   font-size: 2rem;
-  color: rgb(56, 114, 240);
+  color: var(--navbar-bg);
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
 
@@ -27,23 +27,31 @@
 
 
 .card {
-  background: #fff;
+  background: var(--panel-bg);
+  color: var(--text);
   border-radius: 12px;
   padding: 25px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--sidebar-border);
 }
 
 .card h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #b8860b;
+  font-weight: 600;
 }
 
 .card p {
   font-size: 1rem;
-  color: #555;
+  color: var(--text);
+}
+
+.amenities h2,
+.amenities p {
+  color: var(--text);
 }
 
 /* Ховер на карточку */
@@ -62,12 +70,13 @@
 
 
 form.card {
-  background: #fff;
+  background: var(--panel-bg);
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   display: grid;
   gap: 15px;
+  border: 1px solid var(--sidebar-border);
 }
 
 .field {
@@ -78,35 +87,81 @@ form.card {
 }
 
 .field span {
-  font-weight: bold;
-  color: #333;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.field input::placeholder {
+  color: var(--text);
+  opacity: 0.6;
 }
 
 .field input,
 .field select {
-  padding: 10px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
+  padding: 12px;
+  border: 2px solid var(--sidebar-border);
+  border-radius: 8px;
   font-size: 1rem;
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--navbar-bg);
+  box-shadow: 0 0 0 3px rgba(56, 114, 240, 0.1);
 }
 
 /* Кнопка бронирования */
 form.card button {
-  background: rgb(56, 114, 240);
+  background: linear-gradient(135deg, var(--navbar-bg), #3b82f6);
   color: #fff;
-  padding: 12px 20px;
+  padding: 14px 20px;
   border: none;
   cursor: pointer;
   font-size: 1.1rem;
-  border-radius: 8px;
-  transition: background 0.3s ease;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
 form.card button:hover {
-  background: darkblue;
+  background: linear-gradient(135deg, #315fcc, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(56, 114, 240, 0.3);
+}
+
+.success-msg {
+  color: #4caf50;
+  padding: 15px;
+  margin-top: 15px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid rgba(76, 175, 80, 0.3);
 }
 
 /* Адаптивность */
+@media (max-width: 768px) {
+  .amenities {
+    padding: 30px 15px;
+  }
+
+  .amenities h2 {
+    margin-top: 80px;
+    font-size: 1.6rem;
+  }
+
+  #menuSearchInput {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 600px) {
   .img-resp {
     height: 150px;
@@ -115,14 +170,14 @@ form.card button:hover {
   .card h3 {
     font-size: 1.3rem;
   }
+
+  form.card {
+    padding: 20px 15px;
+  }
 }
 
 
 
-
-
-
-/*16.10.25*/
 
 /* --- form errors --- */
 .error-msg { color: #e53935; font-size: 12px; margin-top: 4px; display: block; }
@@ -130,25 +185,67 @@ input.invalid, select.invalid { border: 1px solid #e53935 !important; outline: n
 
 /* --- accordion --- */
 .accordion { max-width: 900px; margin: 2rem auto; }
-.accordion__item { border: 1px solid #ddd; border-radius: 8px; margin-bottom: 10px; overflow: hidden; background: #fff; }
-.accordion__header { width: 100%; text-align: left; padding: 14px 16px; font-weight: 600; cursor: pointer; background: #f7f7f7; border: none; }
-.accordion__content { padding: 0 16px; overflow: hidden; transition: max-height 0.3s ease; }
-.accordion__content p { margin: 14px 0 16px; }
+.accordion__item { border: 1px solid var(--sidebar-border); border-radius: 8px; margin-bottom: 10px; overflow: hidden; background: var(--panel-bg); }
+.accordion__header { width: 100%; text-align: left; padding: 14px 16px; font-weight: 600; cursor: pointer; background: var(--sidebar-hover); border: none; color: var(--text); }
+.accordion__content { padding: 0 16px; overflow: hidden; transition: max-height 0.3s ease; background: var(--panel-bg); }
+.accordion__content p { margin: 14px 0 16px; color: var(--text); }
 
 
 /* ===== jQuery Part 1: Search UI ===== */
 .search-box {   }
 
-#menuSearchInput { width: 500px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; }
-#menuSuggestions { 
-  position: absolute; left: 0; right: 0; 
-  background: #fff; border: 1px solid #ddd; border-top: none; 
-  display: none; list-style: none; margin: 0; padding: 0; z-index: 10; 
-  border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;
+.search-box {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 30px;
 }
-#menuSuggestions li { padding: 8px 12px; cursor: pointer; }
-#menuSuggestions li:hover { background: #f5f5f5; }
-/* Highlight color */
+
+#menuSearchInput { 
+  width: 100%; 
+  max-width: 500px;
+  padding: 12px 16px; 
+  border: 2px solid var(--sidebar-border); 
+  border-radius: 10px; 
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#menuSearchInput:focus {
+  outline: none;
+  border-color: var(--navbar-bg);
+  box-shadow: 0 0 0 3px rgba(56, 114, 240, 0.1);
+}
+
+#menuSuggestions { 
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  background: var(--panel-bg); 
+  border: 2px solid var(--sidebar-border); 
+  border-top: none; 
+  display: none; 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+  z-index: 10; 
+  border-bottom-left-radius: 10px; 
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 300px;
+  overflow-y: auto;
+}
+#menuSuggestions li { 
+  padding: 12px 16px; 
+  cursor: pointer; 
+  color: var(--text);
+  transition: background 0.2s ease;
+}
+#menuSuggestions li:hover { 
+  background: var(--sidebar-hover); 
+}
+
 mark { background: #ffe08a; padding: 0 2px; border-radius: 2px; }
 
 
@@ -158,32 +255,34 @@ mark { background: #ffe08a; padding: 0 2px; border-radius: 2px; }
 
 /* ===== Mobile-safe base ===== */
 html { box-sizing: border-box; }
-*, *::before, *::after { box-sizing: inherit; min-width: 0; } /* lets inputs shrink */
+*, *::before, *::after { box-sizing: inherit; min-width: 0; } 
 img, video { max-width: 100%; height: auto; }
 
 /* ===== Card wrapper ===== */
 .form-card {
-  max-width: 720px;               /* centers and caps width on desktop */
+  max-width: 720px;               
   width: 100%;
   margin: 0 auto;
-  background: #fff;
+  background: var(--panel-bg);
+  color: var(--text);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0,0,0,.08);
-  padding: clamp(12px, 3vw, 24px); /* responsive padding */
-  overflow: hidden;                /* prevents children from “sticking out” */
+  padding: clamp(12px, 3vw, 24px); 
+  overflow: hidden;               
+  border: 1px solid var(--sidebar-border);
 }
 
 /* Headings & rows */
 .form-card h2,
-.form-card h3 { margin: 0 0 .75rem; line-height: 1.2; }
+.form-card h3 { margin: 0 0 .75rem; line-height: 1.2; color: var(--text); }
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;  /* 2 columns on wider screens */
+  grid-template-columns: 1fr 1fr;  
   gap: 12px;
 }
 
-/* On small screens go to 1 column */
+
 @media (max-width: 640px) {
   .form-grid { grid-template-columns: 1fr; }
 }
@@ -193,24 +292,25 @@ img, video { max-width: 100%; height: auto; }
 .form-card select,
 .form-card textarea,
 .form-card button {
-  width: 100%;            /* full width of the card column */
-  min-width: 0;           /* critical inside grid/flex to stop overflow */
+  width: 100%;           
+  min-width: 0;          
   display: block;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--sidebar-border);
   border-radius: 10px;
   padding: 12px 14px;
   font: inherit;
   line-height: 1.2;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* Date/time fields sometimes render taller—normalize height */
 .form-card input[type="date"],
 .form-card input[type="time"],
 .form-card input[type="datetime-local"] {
   height: 44px;
 }
 
-/* Prevent long placeholders/text from breaking layout */
+
 .form-card input,
 .form-card textarea {
   overflow: hidden;
@@ -222,12 +322,12 @@ img, video { max-width: 100%; height: auto; }
 .form-card button[type="submit"] {
   cursor: pointer;
   border: none;
-  background: #2563eb;   /* change to your brand color */
+  background: #2563eb;   
   color: #fff;
   font-weight: 600;
 }
 
-/* Keep buttons side-by-side on wide screens */
+
 .button-row {
   display: flex;
   gap: 12px;

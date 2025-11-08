@@ -4,22 +4,40 @@ document.addEventListener("DOMContentLoaded", function () {
   let saveNameBtn = document.getElementById("saveNameBtn");
   let greetingText = document.getElementById("greetingText");
 
-
-  let savedName = localStorage.getItem("profileName");
-  if (savedName) {
-    greetingText.textContent = "Hello, " + savedName + "!";
-    if (nameInput) nameInput.value = savedName;
+  // Get name from current user
+  const currentUser = localStorage.getItem("currentUser");
+  if (currentUser) {
+    const user = JSON.parse(currentUser);
+    if (greetingText) greetingText.textContent = "Hello, " + user.name + "!";
+    if (nameInput) nameInput.value = user.name;
   }
 
   if (saveNameBtn) {
     saveNameBtn.addEventListener("click", function () {
+      const currentUser = localStorage.getItem("currentUser");
+      if (!currentUser) {
+        alert("Please log in to update your profile.");
+        return;
+      }
+
       let name = (nameInput && nameInput.value) ? nameInput.value.trim() : "";
       if (name.length > 0) {
         greetingText.textContent = "Hello, " + name + "!";
-        localStorage.setItem("profileName", name);
+        
+        // Update user in localStorage
+        const user = JSON.parse(currentUser);
+        user.name = name;
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        
+        // Update in users array
+        const users = JSON.parse(localStorage.getItem("users") || "[]");
+        const userIndex = users.findIndex(u => u.email === user.email);
+        if (userIndex !== -1) {
+          users[userIndex].name = name;
+          localStorage.setItem("users", JSON.stringify(users));
+        }
       } else {
         greetingText.textContent = "Hello!";
-        localStorage.removeItem("profileName");
       }
    
       let snd = document.getElementById("clickSound");
@@ -76,8 +94,21 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       quote = pickRandom(quotesGood);
     }
-    if (quoteBox) quoteBox.textContent = quote;
+    if (quoteBox) {
+      const quoteText = quoteBox.querySelector('p');
+      if (quoteText) {
+        quoteText.textContent = quote;
+      } else {
+        quoteBox.innerHTML = `<ion-icon name="chatbubble-outline"></ion-icon><p>${quote}</p>`;
+      }
+    }
 
+    // Save rating to localStorage
+    const currentUser = localStorage.getItem('currentUser');
+    if (currentUser) {
+      const user = JSON.parse(currentUser);
+      localStorage.setItem(`rating_${user.email}`, value.toString());
+    }
 
     let snd = document.getElementById("clickSound");
     if (snd) { snd.currentTime = 0; snd.play(); }

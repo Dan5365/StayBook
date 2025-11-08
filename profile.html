@@ -10,7 +10,7 @@
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <!-- jQuery (CDN) -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
@@ -43,6 +43,15 @@
             <a href="Dining.html" class="btn">Dining</a>
           </div>
         </div>
+
+        <div class="theme-toggle-container">
+          <button class="theme-btn" id="theme-day" title="Light Mode">
+            <ion-icon name="sunny-outline"></ion-icon>
+          </button>
+          <button class="theme-btn" id="theme-night" title="Dark Mode">
+            <ion-icon name="moon-outline"></ion-icon>
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -69,31 +78,57 @@
 
     <main class="main">
 
-      <div class="profile-wrap">
-        <!-- Greeting -->
-            <div class="profile-greeting">
-              <label for="nameInput">Your name:</label>
-              <input id="nameInput" type="text" placeholder="Enter your name">
-              <button class="save-btn" id="saveNameBtn">Save</button>
-              <p id="greetingText">Hello!</p>
-            </div>
-
-            <!-- Rating + Quote -->
-            <div class="profile-rating">
-              <p>Rate your mood today:</p>
-              <div id="stars">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
+      <div class="profile-wrap" style="display: none;">
+   
+        <div class="profile-card">
+          <div class="profile-header">
+            <h2>Welcome Back!</h2>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+          </div>
+          
+          <!-- Greeting -->
+          <div class="profile-greeting">
+            <div class="greeting-content">
+              <label for="nameInput">Your Name</label>
+              <div class="input-group">
+                <input id="nameInput" type="text" placeholder="Enter your name">
+                <button class="save-btn" id="saveNameBtn">
+                  <ion-icon name="checkmark-outline"></ion-icon>
+                  Save
+                </button>
               </div>
-              <p id="ratingLabel">Your rating: 0/5</p>
-              <p id="quoteBox">Pick a rating to see a quote.</p>
+              <p id="greetingText" class="greeting-text">Hello!</p>
             </div>
+          </div>
 
-            <!-- Sound (put any short click sound file here) -->
-            <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-11.mp3" preload="auto"></audio>
+          <!-- Rating + Quote -->
+          <div class="profile-rating">
+            <h3>Rate Your Mood Today</h3>
+            <div id="stars" class="stars-container">
+              <span class="star" data-value="1" title="Poor">★</span>
+              <span class="star" data-value="2" title="Fair">★</span>
+              <span class="star" data-value="3" title="Good">★</span>
+              <span class="star" data-value="4" title="Very Good">★</span>
+              <span class="star" data-value="5" title="Excellent">★</span>
+            </div>
+            <p id="ratingLabel" class="rating-label">Your rating: 0/5</p>
+            <div id="quoteBox" class="quote-box">
+              <ion-icon name="chatbubble-outline"></ion-icon>
+              <p>Pick a rating to see a quote.</p>
+            </div>
+          </div>
+
+          <!-- Weather API Section -->
+          <div class="weather-section">
+            <h3>Weather at Hotel Location</h3>
+            <div id="weather-info" class="weather-info">
+              <div class="weather-loading">Loading weather...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sound (put any short click sound file here) -->
+        <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-11.mp3" preload="auto"></audio>
       </div>
 
 
@@ -178,6 +213,7 @@
 <script src="js/theme.js"></script>
 <script src="js/profile-ui.js"></script>
 <script src="js/pop-time.js"></script>
+<script src="js/weather.js"></script>
 
 
 </html>

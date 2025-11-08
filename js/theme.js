@@ -4,17 +4,52 @@
   if (saved === "night") {
     document.body.classList.add("theme-night");
   }
+  updateThemeButtons();
 })();
 
 
 function setDay() {
   document.body.classList.remove("theme-night");
   localStorage.setItem("theme", "day");
+  updateThemeButtons();
 }
 function setNight() {
   document.body.classList.add("theme-night");
   localStorage.setItem("theme", "night");
+  updateThemeButtons();
 }
+
+function updateThemeButtons() {
+  const dayBtn = document.getElementById("theme-day");
+  const nightBtn = document.getElementById("theme-night");
+  const isNight = document.body.classList.contains("theme-night");
+  
+  if (dayBtn && nightBtn) {
+    if (isNight) {
+      dayBtn.style.opacity = "0.6";
+      nightBtn.style.opacity = "1";
+    } else {
+      dayBtn.style.opacity = "1";
+      nightBtn.style.opacity = "0.6";
+    }
+  }
+}
+
+// Button click handlers
+document.addEventListener("DOMContentLoaded", function() {
+  const dayBtn = document.getElementById("theme-day");
+  const nightBtn = document.getElementById("theme-night");
+
+  if (dayBtn) {
+    dayBtn.addEventListener("click", setDay);
+  }
+
+  if (nightBtn) {
+    nightBtn.addEventListener("click", setNight);
+  }
+
+  updateThemeButtons();
+});
 
 
 document.addEventListener("keydown", function(e) {
