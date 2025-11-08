@@ -2,7 +2,7 @@
 
 **StayBook** is a fully functional hotel booking website built with HTML, CSS, and JavaScript. This project demonstrates modern web development practices including responsive design, user authentication, form validation, and external API integration.
 
-**🌐 Live Demo:** [View on GitHub Pages](https://yourusername.github.io/HotelBooking-main/)
+**🌐 Live Demo:** [View on GitHub Pages](https://dan5365.github.io/StayBook/)
 
 ---
 
