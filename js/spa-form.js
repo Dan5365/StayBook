@@ -12,17 +12,23 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Basic validation
       if (!service || service === '') {
-        alert('Please select a service.');
+        if (window.showError) {
+          window.showError('Please select a service.');
+        }
         return;
       }
       
       if (!date) {
-        alert('Please select a date.');
+        if (window.showError) {
+          window.showError('Please select a date.');
+        }
         return;
       }
       
       if (!time || time.trim() === '') {
-        alert('Please enter a preferred time.');
+        if (window.showError) {
+          window.showError('Please enter a preferred time.');
+        }
         return;
       }
       
@@ -39,20 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
       bookings.push(booking);
       localStorage.setItem('spaBookings', JSON.stringify(bookings));
       
-      // Show success message
-      const successMsg = document.createElement('div');
-      successMsg.className = 'success-msg';
-      successMsg.textContent = 'Operation was sent successfully! We will contact you soon.';
-      
-      spaForm.insertBefore(successMsg, spaForm.firstChild);
+      // Show success notification
+      if (window.showSuccess) {
+        window.showSuccess('Spa appointment booked successfully! We will contact you soon.');
+      }
       
       // Reset form
       spaForm.reset();
-      
-      // Remove success message after 5 seconds
-      setTimeout(() => {
-        successMsg.remove();
-      }, 5000);
     });
   }
 });

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initializeProfileUI() {
   // ==== Greeting (name input) ====
   let nameInput = document.getElementById("nameInput");
   let saveNameBtn = document.getElementById("saveNameBtn");
@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
     saveNameBtn.addEventListener("click", function () {
       const currentUser = localStorage.getItem("currentUser");
       if (!currentUser) {
-        alert("Please log in to update your profile.");
+        if (window.showError) {
+          window.showError("Please log in to update your profile.");
+        }
         return;
       }
 
@@ -121,4 +123,14 @@ document.addEventListener("DOMContentLoaded", function () {
       setRating(val);
     });
   }
+}
+
+// Initialize on page load
+document.addEventListener("DOMContentLoaded", function () {
+  initializeProfileUI();
+  
+  // Listen for login events to reinitialize
+  window.addEventListener('userLoggedIn', function() {
+    setTimeout(initializeProfileUI, 300);
+  });
 });

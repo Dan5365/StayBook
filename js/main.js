@@ -37,7 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (valid) {
-        alert("Registration successful! (demo)");
+        if (window.showSuccess) {
+          window.showSuccess("Registration successful! (demo)");
+        }
         regForm.reset();
       }
     });
@@ -65,7 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (valid) {
-        alert("Login successful! (demo)");
+        if (window.showSuccess) {
+          window.showSuccess("Login successful! (demo)");
+        }
         loginForm.reset();
       }
     });
@@ -142,7 +146,9 @@ document.addEventListener("DOMContentLoaded", () => {
         bookings.push(booking);
         localStorage.setItem('bookings', JSON.stringify(bookings));
         
-        alert("Booking submitted successfully! We'll contact you soon.");
+        if (window.showSuccess) {
+          window.showSuccess("Booking submitted successfully! We'll contact you soon.");
+        }
         bookingForm.reset();
       }
     });

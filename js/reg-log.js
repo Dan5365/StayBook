@@ -1,243 +1,186 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const registerForm = document.getElementById('register-form');
+  const loginForm = document.getElementById('login-form');
   const registerBox = document.getElementById('register-box');
   const loginBox = document.getElementById('login-box');
-  const showLogin = document.getElementById('show-login');
-  const showRegister = document.getElementById('show-register');
   const profileWrap = document.querySelector('.profile-wrap');
   const profilePage = document.querySelector('.profile-page');
 
-  // Initialize users array in localStorage if it doesn't exist
+  // ======================
+  //   Инициализация
+  // ======================
   if (!localStorage.getItem('users')) {
     localStorage.setItem('users', JSON.stringify([]));
   }
 
-  // Check if user is logged in
+  // ======================
+  //   Проверка авторизации
+  // ======================
   function checkAuth() {
+  try {
     const currentUser = localStorage.getItem('currentUser');
-    if (currentUser && profileWrap) {
-      const user = JSON.parse(currentUser);
-      profileWrap.style.display = 'block';
-      if (profilePage) profilePage.style.display = 'none';
-      
-      // Update profile with user data
-      const nameInput = document.getElementById('nameInput');
-      const greetingText = document.getElementById('greetingText');
-      if (nameInput) nameInput.value = user.name;
-      if (greetingText) greetingText.textContent = `Hello, ${user.name}!`;
-      
-      // Load saved rating
-      const savedRating = localStorage.getItem(`rating_${user.email}`);
-      if (savedRating) {
-        const rating = parseInt(savedRating);
-        const stars = document.querySelectorAll('#stars .star');
-        const ratingLabel = document.getElementById('ratingLabel');
-        stars.forEach((star, index) => {
-          if (index < rating) star.classList.add('active');
-        });
-        if (ratingLabel) ratingLabel.textContent = `Your rating: ${rating}/5`;
-      }
-    } else {
+    if (!currentUser) {
       if (profileWrap) profileWrap.style.display = 'none';
       if (profilePage) profilePage.style.display = 'block';
+      return;
     }
-  }
 
-  // Check auth on page load
+    const user = JSON.parse(currentUser);
+    if (!user || !user.name) return;
+
+    if (profileWrap) profileWrap.style.display = 'block';
+    if (profilePage) profilePage.style.display = 'none';
+
+    const nameInput = document.getElementById('nameInput');
+    const greetingText = document.getElementById('greetingText');
+
+    if (nameInput) nameInput.value = user.name;
+    if (greetingText) greetingText.textContent = `Hello, ${user.name}!`;
+
+    setTimeout(() => {
+      if (typeof window.loadWeather === 'function') {
+        try {
+          window.loadWeather();
+        } catch (err) {
+          console.warn('Weather load failed:', err);
+        }
+      }
+      const event = new Event('userLoggedIn');
+      window.dispatchEvent(event);
+    }, 300);
+
+  } catch (err) {
+    console.error('checkAuth error:', err);
+  }
+}
+
   checkAuth();
 
+  // ======================
+  //   Переключение форм
+  // ======================
+  const showLogin = document.getElementById('show-login');
+  const showRegister = document.getElementById('show-register');
+
   if (showLogin) {
-    showLogin.addEventListener('click', function (e) {
+    showLogin.addEventListener('click', e => {
       e.preventDefault();
-      if (registerBox) registerBox.style.display = 'none';
-      if (loginBox) loginBox.style.display = 'block';
+      registerBox.style.display = 'none';
+      loginBox.style.display = 'block';
     });
   }
 
   if (showRegister) {
-    showRegister.addEventListener('click', function (e) {
+    showRegister.addEventListener('click', e => {
       e.preventDefault();
-      if (loginBox) loginBox.style.display = 'none';
-      if (registerBox) registerBox.style.display = 'block';
+      loginBox.style.display = 'none';
+      registerBox.style.display = 'block';
     });
   }
 
-  // Helper function to show error
+  // ======================
+  //   Функции для ошибок
+  // ======================
   function showError(input, message) {
-    // Remove existing error
-    const existingError = input.parentElement.querySelector('.error-msg');
-    if (existingError) {
-      existingError.remove();
-    }
-    
-    // Add error message
+    const existing = input.parentElement.querySelector('.error-msg');
+    if (existing) existing.remove();
+
     const errorMsg = document.createElement('small');
     errorMsg.className = 'error-msg';
+    errorMsg.style.color = '#e74c3c';
     errorMsg.textContent = message;
-    errorMsg.style.color = '#e53935';
-    errorMsg.style.fontSize = '12px';
-    errorMsg.style.marginTop = '4px';
-    errorMsg.style.display = 'block';
-    
-    input.classList.add('invalid');
     input.parentElement.appendChild(errorMsg);
   }
 
-  // Helper function to clear errors
   function clearErrors() {
     document.querySelectorAll('.error-msg').forEach(el => el.remove());
-    document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
   }
 
-  // Handle registration
-  const registerForm = document.getElementById('register-form');
+  // ======================
+  //   Регистрация
+  // ======================
   if (registerForm) {
-    registerForm.addEventListener('submit', function(e) {
+    registerForm.addEventListener('submit', e => {
       e.preventDefault();
       clearErrors();
-      
-      const nameInput = document.getElementById('reg-name');
-      const emailInput = document.getElementById('reg-email');
-      const passwordInput = document.getElementById('reg-password');
-      const confirmInput = document.getElementById('reg-confirm');
-      
-      const name = nameInput.value.trim();
-      const email = emailInput.value.trim();
-      const password = passwordInput.value;
-      const confirm = confirmInput.value;
 
-      let isValid = true;
+      const name = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim().toLowerCase();
+      const password = document.getElementById('reg-password').value.trim();
+      const confirm = document.getElementById('reg-confirm').value.trim();
 
-      // Name validation
-      if (name.length < 2) {
-        showError(nameInput, 'Name must be at least 2 characters.');
-        isValid = false;
-      }
-
-      // Email validation
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showError(emailInput, 'Enter a valid email address.');
-        isValid = false;
-      }
-
-      // Password validation
-      if (password.length < 6) {
-        showError(passwordInput, 'Password must be at least 6 characters.');
-        isValid = false;
-      } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password)) {
-        showError(passwordInput, 'Password must contain at least one uppercase letter, one lowercase letter, and one number.');
-        isValid = false;
-      }
-
-      // Confirm password validation
-      if (password !== confirm) {
-        showError(confirmInput, 'Passwords do not match.');
-        isValid = false;
-      }
-
-      // Check if user already exists
-      if (isValid) {
-        const users = JSON.parse(localStorage.getItem('users'));
-        if (users.find(u => u.email === email)) {
-          showError(emailInput, 'User with this email already exists.');
-          isValid = false;
-        }
-      }
-
-      if (!isValid) {
+      if (!name || name.length < 2) {
+        showError(document.getElementById('reg-name'), 'Enter a valid name.');
         return;
       }
 
-      // Save user
-      const users = JSON.parse(localStorage.getItem('users'));
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError(document.getElementById('reg-email'), 'Enter a valid email.');
+        return;
+      }
+
+      if (password.length < 6) {
+        showError(document.getElementById('reg-password'), 'Password must be at least 6 characters.');
+        return;
+      }
+
+      if (password !== confirm) {
+        showError(document.getElementById('reg-confirm'), 'Passwords do not match.');
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      if (users.find(u => u.email === email)) {
+        showError(document.getElementById('reg-email'), 'User already exists.');
+        return;
+      }
+
       const newUser = { name, email, password };
       users.push(newUser);
       localStorage.setItem('users', JSON.stringify(users));
       localStorage.setItem('currentUser', JSON.stringify(newUser));
 
-      // Show success message
-      const successMsg = document.createElement('div');
-      successMsg.className = 'success-msg';
-      successMsg.textContent = 'Registration successful!';
-      successMsg.style.color = '#4caf50';
-      successMsg.style.padding = '10px';
-      successMsg.style.marginTop = '10px';
-      successMsg.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
-      successMsg.style.borderRadius = '6px';
-      successMsg.style.textAlign = 'center';
-      
-      registerForm.insertBefore(successMsg, registerForm.firstChild);
-      setTimeout(() => {
-        successMsg.remove();
-      }, 3000);
-      
       registerForm.reset();
-      clearErrors();
       checkAuth();
+
+      if (window.showSuccess) window.showSuccess('Registration successful!');
     });
   }
 
-  // Handle login
-  const loginForm = document.getElementById('login-form');
+  // ======================
+  //   Логин
+  // ======================
   if (loginForm) {
-    loginForm.addEventListener('submit', function(e) {
+    loginForm.addEventListener('submit', e => {
       e.preventDefault();
       clearErrors();
-      
-      const emailInput = document.getElementById('login-email');
-      const passwordInput = document.getElementById('login-password');
-      
-      const email = emailInput.value.trim();
-      const password = passwordInput.value;
 
-      let isValid = true;
+      const email = document.getElementById('login-email').value.trim().toLowerCase();
+      const password = document.getElementById('login-password').value.trim();
 
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showError(emailInput, 'Enter a valid email address.');
-        isValid = false;
-      }
-
-      if (password.trim() === '') {
-        showError(passwordInput, 'Please enter your password.');
-        isValid = false;
-      }
-
-      if (!isValid) {
+      if (!email || !password) {
+        showError(document.getElementById('login-email'), 'Enter email and password.');
         return;
       }
 
-      // Check credentials
-      const users = JSON.parse(localStorage.getItem('users'));
+      const users = JSON.parse(localStorage.getItem('users')) || [];
       const user = users.find(u => u.email === email && u.password === password);
 
       if (user) {
         localStorage.setItem('currentUser', JSON.stringify(user));
-        
-        // Show success message
-        const successMsg = document.createElement('div');
-        successMsg.className = 'success-msg';
-        successMsg.textContent = 'Login successful!';
-        successMsg.style.color = '#4caf50';
-        successMsg.style.padding = '10px';
-        successMsg.style.marginTop = '10px';
-        successMsg.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
-        successMsg.style.borderRadius = '6px';
-        successMsg.style.textAlign = 'center';
-        
-        loginForm.insertBefore(successMsg, loginForm.firstChild);
-        setTimeout(() => {
-          successMsg.remove();
-        }, 3000);
-        
         loginForm.reset();
-        clearErrors();
         checkAuth();
+        if (window.showSuccess) window.showSuccess('Login successful!');
       } else {
-        showError(emailInput, 'Invalid email or password.');
+        showError(document.getElementById('login-email'), 'Invalid email or password.');
+        if (window.showError) window.showError('Invalid email or password.');
       }
     });
   }
 
-  // Logout functionality
+  // ======================
+  //   Выход
+  // ======================
   window.logout = function() {
     localStorage.removeItem('currentUser');
     checkAuth();
@@ -245,7 +188,3 @@ document.addEventListener('DOMContentLoaded', function() {
     if (loginBox) loginBox.style.display = 'none';
   };
 });
-
-
-
-

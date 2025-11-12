@@ -12,17 +12,23 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Basic validation
       if (!date) {
-        alert('Please select a date.');
+        if (window.showError) {
+          window.showError('Please select a date.');
+        }
         return;
       }
       
       if (!time || time.trim() === '') {
-        alert('Please enter a time.');
+        if (window.showError) {
+          window.showError('Please enter a time.');
+        }
         return;
       }
       
       if (!guests || guests === '') {
-        alert('Please select number of guests.');
+        if (window.showError) {
+          window.showError('Please select number of guests.');
+        }
         return;
       }
       
@@ -39,20 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
       bookings.push(booking);
       localStorage.setItem('diningBookings', JSON.stringify(bookings));
       
-      // Show success message
-      const successMsg = document.createElement('div');
-      successMsg.className = 'success-msg';
-      successMsg.textContent = 'Operation was sent successfully! We will contact you soon.';
-      
-      diningForm.insertBefore(successMsg, diningForm.firstChild);
+      // Show success notification
+      if (window.showSuccess) {
+        window.showSuccess('Dining reservation booked successfully! We will contact you soon.');
+      }
       
       // Reset form
       diningForm.reset();
-      
-      // Remove success message after 5 seconds
-      setTimeout(() => {
-        successMsg.remove();
-      }, 5000);
     });
   }
 });

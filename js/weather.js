@@ -1,5 +1,5 @@
 // Weather API Integration for Hotel Location (Almaty, Kazakhstan)
-document.addEventListener('DOMContentLoaded', function() {
+function loadWeather() {
   const weatherInfo = document.getElementById('weather-info');
   
   if (!weatherInfo) return;
@@ -103,5 +103,18 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       `;
     });
+}
+
+// Expose loadWeather globally
+window.loadWeather = loadWeather;
+
+// Load weather on page load if user is logged in
+document.addEventListener('DOMContentLoaded', function() {
+  loadWeather();
+  
+  // Listen for login events
+  window.addEventListener('userLoggedIn', function() {
+    setTimeout(loadWeather, 300);
+  });
 });
 
